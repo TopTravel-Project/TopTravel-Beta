@@ -79,6 +79,6 @@ nav i {
     height: var(--icon-container-height);
     border-radius: 0 calc(var(--indicatore-width)/2) calc(var(--indicatore-width)/2) 0;
     width: var(--indicatore-width);
-    background-color: var(--300-blue);
+    background-color: var(--700-blue);
     transition: all 0.2s ease-in-out;
 }

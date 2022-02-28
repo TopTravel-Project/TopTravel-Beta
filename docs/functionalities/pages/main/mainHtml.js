@@ -2,6 +2,7 @@ let navbarIconContainer = document.querySelector('.nav-icons-container');
 let navbarTextContainer = document.querySelector('.nav-text-container');
 
 let main = document.querySelector('main');
+let sectionContainer = document.querySelectorAll('main>section');
 
 let navWidth;
 

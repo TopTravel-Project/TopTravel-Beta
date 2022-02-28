@@ -2,6 +2,7 @@ let navIcons = document.querySelectorAll('.nav-icons-container>div');
 let navLinks = document.querySelectorAll('.nav-text-container>span');
 
 let navLinksContainer = document.querySelector('.nav-text-container');
+let navIconsContainer = document.querySelector('.nav-icons-container');
 
 let menuIcon = navIcons[0];
 

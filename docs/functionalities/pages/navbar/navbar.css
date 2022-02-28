@@ -1,0 +1,84 @@
+@import url("../../../style.css");
+
+/*  */
+
+* {
+    /* height */
+    --nav-width: 4rem;
+    --display-height: 100vh;
+    --display-width: 100vw;
+    --icon-container-height: 5rem;
+    --indicatore-width: calc(var(--nav-width)/15);
+    transition: all 0.1s ease-in-out;
+}
+
+body {
+    font-family: poppins;
+}
+
+nav {
+    background-color: var(--50-blue);
+    height: var(--display-height);
+    width: var(--nav-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav i {
+    font-size: calc(var(--nav-width) - 2rem);
+    color: var(--800-blue);
+}
+
+.nav-icons-container {
+    display: grid;
+    place-items: center;
+}
+
+.nav-icons-container>div {
+    height: var(--icon-container-height);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.hovered {
+    background-color: var(--100-blue);
+}
+
+.nav-text-container {
+    display: grid;
+    grid-auto-rows: 5rem;
+    position: fixed;
+    top: 0;
+    left: var(--nav-width);
+    font-size: 1.2rem;
+    background-color: var(--50-blue);
+    height: var(--display-height);
+    z-index: -1;
+}
+
+.nav-text-container span {
+    height: 5rem;
+    display: grid;
+    place-items: center start;
+    padding: 0 1rem 0 0;
+    color: var(--800-blue);
+}
+
+.closeNav {
+    transform: translateX(-200%);
+    opacity: 0;
+}
+
+.nav-icons-container::before {
+    content: '';
+    position: absolute;
+    top: var(--indicatoreY, 80px);
+    left: 0;
+    height: var(--icon-container-height);
+    border-radius: 0 calc(var(--indicatore-width)/2) calc(var(--indicatore-width)/2) 0;
+    width: var(--indicatore-width);
+    background-color: var(--700-blue);
+    transition: all 0.2s ease-in-out;
+}

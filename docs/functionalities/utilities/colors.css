@@ -1,0 +1,21 @@
+* {
+    --50-blue: #e1f5ff;
+    --100-blue: #b3e5fc;
+    --200-blue: #80d4ff;
+    --300-blue: #4cc3ff;
+    --400-blue: #22b5ff;
+    --500-blue: #00a8ff;
+    --600-blue: #089aef;
+    --700-blue: #0f87db;
+    --800-blue: #0e76c6;
+    --900-blue: #1055a4;
+}
+
+* {
+    --0-white: #fff;
+}
+
+* {
+    --glass-color: rgba(255, 255, 255, 0.2);
+    --black-opacity: rgba(0, 0, 0, 0.2);
+}

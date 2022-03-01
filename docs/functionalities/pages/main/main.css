@@ -1,1 +1,10 @@
-main {}
+main {
+    position: fixed;
+    top: 0;
+    left: var(--navWidth, 64px);
+}
+
+main {
+    margin-left: calc((-100vw * var(--indexPagina, 1)) + (var(--navWidth, 64px) * var(--indexPagina, 1)));
+    transition: margin-left left 1s ease-in-out;
+}

@@ -1,1 +1,10 @@
-main {}
+main {
+    position: fixed;
+    top: 0;
+    left: 65px;
+}
+
+
+/* main {
+    margin-left: calc(-300vw + (65px *);
+} */

@@ -12,19 +12,11 @@ let navWidth;
 document.querySelectorAll('.nav-icons-container>div')[0].addEventListener('click', () => {
     console.log("menu icon is clicked");
 
-
     if (navLinksContainer.classList.contains('closeNav')) {
         navWidth = navbarIconContainer.offsetWidth + navbarTextContainer.offsetWidth;
-        main.style.marginLeft = navWidth - navbarIconContainer.offsetWidth + "px";
+        main.style.left = navWidth + "px";
     } else {
         navWidth = navbarIconContainer.offsetWidth;
-        main.style.marginLeft = navWidth - navWidth + "px";
+        main.style.left = navWidth + "px";
     }
 });
-/* 
-function setDefaultPosition() {
-    navWidth = navbarIconContainer.offsetWidth;
-    main.style.marginLeft = `
-                $ { navWidth }
-                px `;
-} */

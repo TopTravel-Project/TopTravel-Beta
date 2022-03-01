@@ -22,9 +22,8 @@ navLinks.forEach((item, index, arr) => {
         item.addEventListener('click', (e) => {
 
             if (index != 0) {
-                sectionContainer[index].scrollIntoView({
-                    behavior: 'smooth',
-                });
+                main.style.setProperty('--indexPagina', index);
+                main.style.setProperty('--navWidth', navbarIconContainer.offsetWidth + "px");
 
                 navIconsContainer.style.setProperty("--indicatoreY", itemHeight * index + 'px');
             }

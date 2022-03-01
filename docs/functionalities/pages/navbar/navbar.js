@@ -33,7 +33,9 @@ menuIcon.addEventListener('click', () => {
 
     if (navLinksContainer.classList.contains('closeNav')) {
         menuIcon.querySelector("i").style.transform = 'scale(0.8) rotate(0)';
+        navIconsContainer.classList.remove('navIsOpen')
     } else {
         menuIcon.querySelector("i").style.transform = 'scale(1) rotate(15deg)';
+        navIconsContainer.classList.add('navIsOpen');
     }
 });

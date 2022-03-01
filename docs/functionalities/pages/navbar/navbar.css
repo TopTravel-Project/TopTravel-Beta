@@ -80,6 +80,41 @@ nav i {
     height: var(--icon-container-height);
     border-radius: 0 calc(var(--indicatore-width)/2) calc(var(--indicatore-width)/2) 0;
     width: var(--indicatore-width);
+    box-shadow: 0 0 1.5rem 0.3rem var(--800-blue);
     background-color: var(--700-blue);
     transition: all 0.2s ease-in-out;
+}
+
+.nav-icons-container>div:hover::after {
+    content: attr(title);
+    position: absolute;
+    white-space: nowrap;
+    left: calc(1rem + var(--nav-width));
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: white;
+    color: var(--500-blue);
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-radius: 1rem 0.5rem 0.5rem 2rem;
+    pointer-events: none;
+    animation: 0.1s fadeNavDesc ease-in-out forwards;
+    z-index: -1;
+    backdrop-filter: blur(0.5rem);
+}
+
+.nav-icons-container.navIsOpen>div:hover::after {
+    left: calc(1rem + var(--navOpenWidth));
+}
+
+@keyframes fadeNavDesc {
+    from {
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        transform: translateX(-100%) scale(0);
+    }
+    to {
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
 }

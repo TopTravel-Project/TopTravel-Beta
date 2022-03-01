@@ -21,6 +21,11 @@ navLinks.forEach((item, index, arr) => {
     item.addEventListener('mouseover', (e) => {
         item.classList.add('hovered');
         navIcons[index].classList.add('hovered');
+
+        if (item == navLinks[0]) {
+            // add property title to the item
+            item.setAttribute('title', "clicca l'icona per chiudere il menu");
+        }
     });
     item.addEventListener('mouseout', (e) => {
         item.classList.remove('hovered');

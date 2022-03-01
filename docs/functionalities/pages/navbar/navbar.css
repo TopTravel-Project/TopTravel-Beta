@@ -101,6 +101,8 @@ nav i {
     animation: 0.1s fadeNavDesc ease-in-out forwards;
     z-index: -1;
     backdrop-filter: blur(0.5rem);
+    /* --200-blue but with opacity */
+    box-shadow: 0 0 1rem #80d5ff50;
 }
 
 .nav-icons-container.navIsOpen>div:hover::after {
@@ -111,7 +113,7 @@ nav i {
     from {
         opacity: 0;
         background-color: rgba(255, 255, 255, 0);
-        transform: translateX(-100%) scale(0);
+        transform: translateX(-50%);
     }
     to {
         opacity: 1;

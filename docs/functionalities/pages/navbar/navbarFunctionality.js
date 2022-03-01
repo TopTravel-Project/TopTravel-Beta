@@ -1,7 +1,5 @@
-sectionContainer[1].scrollIntoView({
-    behavior: 'smooth',
-});
-
+/* main.style.left = "64px";
+main.style.marginLeft = "calc((-100vw * 1 + (64px * 1));"; */
 
 navIcons.forEach((item, index, arr) => {
     let itemHeight = item.offsetHeight;
@@ -9,9 +7,8 @@ navIcons.forEach((item, index, arr) => {
     item.addEventListener('click', (e) => {
 
         if (index != 0) {
-            sectionContainer[index].scrollIntoView({
-                behavior: 'smooth',
-            });
+            main.style.setProperty('--indexPagina', index);
+            main.style.setProperty('--navWidth', navbarIconContainer.offsetWidth + "px");
 
             navIconsContainer.style.setProperty("--indicatoreY", itemHeight * index + 'px');
         }

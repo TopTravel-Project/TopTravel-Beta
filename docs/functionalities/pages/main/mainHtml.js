@@ -18,5 +18,6 @@ document.querySelectorAll('.nav-icons-container>div')[0].addEventListener('click
     } else {
         navWidth = navbarIconContainer.offsetWidth;
         main.style.left = navWidth + "px";
+
     }
 });

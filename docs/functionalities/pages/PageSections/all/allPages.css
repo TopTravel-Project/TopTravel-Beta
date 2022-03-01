@@ -17,6 +17,7 @@ main>section {
 
 main {
     display: grid;
-    grid-template-columns: repeat(5, var(--all-width-without-navbar));
+    /* 5 sono le pagine, ma a seguito di un bug, ho aggiunto una pagina vuota per risolvere (non cancellare, non utilizzare) */
+    grid-template-columns: repeat(6, var(--all-width-without-navbar));
     overflow: hidden;
 }

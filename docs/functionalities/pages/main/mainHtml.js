@@ -12,6 +12,7 @@ let navWidth;
 document.querySelectorAll('.nav-icons-container>div')[0].addEventListener('click', () => {
     console.log("menu icon is clicked");
 
+
     if (navLinksContainer.classList.contains('closeNav')) {
         navWidth = navbarIconContainer.offsetWidth + navbarTextContainer.offsetWidth;
         main.style.marginLeft = navWidth - navbarIconContainer.offsetWidth + "px";

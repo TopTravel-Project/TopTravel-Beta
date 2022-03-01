@@ -2,8 +2,7 @@ sectionContainer[1].scrollIntoView({
     behavior: 'smooth',
 });
 
-let iconClicksVar = 0;
-console.log('iconClicksVar:', iconClicksVar);
+let isLastIconClicked = false;
 
 navIcons.forEach((item, index, arr) => {
     let itemHeight = item.offsetHeight;
@@ -17,21 +16,14 @@ navIcons.forEach((item, index, arr) => {
             navIconsContainer.style.setProperty("--indicatoreY", itemHeight * index + 'px');
         }
 
-        /*         if (index != 1 && 0) {
-                    iconClicksVar++;
-                    console.log('iconClicksVar:', iconClicksVar)
+        /*         if (index == arr.length - 1) {
+                    main.style.marginLeft = 0 + "px";
+                    isLastIconClicked = true;
                 }
 
-                function checkScroll() {
-
-
-                    let isClickedBefore = () => {
-                        if (iconClicksVar != 0) {
-                            return true;
-                        }
-                        return false;
-                    };
-
+                if (index != 4 && isLastIconClicked) {
+                    main.style.marginLeft = 65 + "px";
+                    isLastIconClicked = false;
                 } */
     });
 });

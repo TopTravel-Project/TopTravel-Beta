@@ -8,6 +8,9 @@ let navWidth;
 
 /* setDefaultPosition(); */
 
+let nav = document.querySelector('nav');
+
+nav.style.setProperty('--navOpenWidth', navbarIconContainer.offsetWidth + navbarTextContainer.offsetWidth + "px");
 // menuIcon
 document.querySelectorAll('.nav-icons-container>div')[0].addEventListener('click', () => {
     console.log("menu icon is clicked");

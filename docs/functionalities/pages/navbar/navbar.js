@@ -21,6 +21,11 @@ navLinks.forEach((item, index, arr) => {
     item.addEventListener('mouseover', (e) => {
         item.classList.add('hovered');
         navIcons[index].classList.add('hovered');
+
+        if (item == navLinks[0]) {
+            // add property title to the item
+            item.setAttribute('title', "clicca l'icona per chiudere il menu");
+        }
     });
     item.addEventListener('mouseout', (e) => {
         item.classList.remove('hovered');
@@ -33,7 +38,9 @@ menuIcon.addEventListener('click', () => {
 
     if (navLinksContainer.classList.contains('closeNav')) {
         menuIcon.querySelector("i").style.transform = 'scale(0.8) rotate(0)';
+        navIconsContainer.classList.remove('navIsOpen')
     } else {
         menuIcon.querySelector("i").style.transform = 'scale(1) rotate(15deg)';
+        navIconsContainer.classList.add('navIsOpen');
     }
 });

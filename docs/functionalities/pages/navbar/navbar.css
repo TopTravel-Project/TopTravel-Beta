@@ -80,6 +80,44 @@ nav i {
     height: var(--icon-container-height);
     border-radius: 0 calc(var(--indicatore-width)/2) calc(var(--indicatore-width)/2) 0;
     width: var(--indicatore-width);
+    box-shadow: 0 0 1.5rem 0.3rem var(--800-blue);
     background-color: var(--700-blue);
     transition: all 0.2s ease-in-out;
+}
+
+.nav-icons-container>div::after {
+    content: attr(title);
+    position: absolute;
+    white-space: nowrap;
+    left: calc(1rem + var(--nav-width));
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: var(--50-blue);
+    color: var(--500-blue);
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-radius: 1rem 0.5rem 0.5rem 2rem;
+    pointer-events: none;
+    z-index: -1;
+    box-shadow: 0 0 2rem white;
+    transform: translateX(-200%);
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-icons-container>div:hover::after {
+    animation: 0.5s fadeNavDesc ease-out forwards;
+    transform: translateX(0);
+}
+
+.nav-icons-container.navIsOpen>div:hover::after {
+    left: calc(1rem + var(--navOpenWidth));
+}
+
+@keyframes fadeNavDesc {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
 }

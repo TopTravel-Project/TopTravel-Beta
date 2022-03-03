@@ -16,6 +16,7 @@
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: -1;
 }
 
 #chat-form {
@@ -38,4 +39,16 @@
 #chat-form input[type=submit] {
     font-family: fontawesome;
     font-size: 1.5rem;
+}
+
+#chat-inner-messaggi {
+    padding: 1rem;
+}
+
+#chat-inner-messaggi div.ricevuto {
+    background-color: var(--200-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    max-width: 60vw;
+    width: max-content
 }

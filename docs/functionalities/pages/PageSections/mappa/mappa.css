@@ -1,0 +1,8 @@
+@import url(../../../../style.css);
+
+/* */
+
+#mappa-container iframe {
+    width: 100%;
+    height: 100%;
+}

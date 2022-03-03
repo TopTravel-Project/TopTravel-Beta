@@ -43,12 +43,33 @@
 
 #chat-inner-messaggi {
     padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    height: calc(100vh - 4rem);
+    overflow: scroll;
 }
 
-#chat-inner-messaggi div.ricevuto {
+#chat-inner-messaggi .inviato-messaggio {
+    background-color: var(--400-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem 0 1rem 1rem;
+    max-width: 60vw;
+    width: max-content;
+}
+
+#chat-inner-messaggi .ricevuto-messaggio {
     background-color: var(--200-blue);
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0 1rem 1rem 1rem;
     max-width: 60vw;
-    width: max-content
+    width: max-content;
+}
+
+#chat-inner-messaggi .inviato-container {
+    display: grid;
+    justify-items: end;
+}
+
+#chat-inner-messaggi .ricevuto-messaggio {
+    display: flex;
 }

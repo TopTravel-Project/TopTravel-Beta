@@ -71,9 +71,27 @@
         <!-- 2 -->
         <section id="chat-container">
             <div id="chat-inner-messaggi">
-                <div class="inviato">hello world1</div>
-                <div class="ricevuto">hello world2</div>
+                <!-- inviato -->
+                <div class="inviato-container">
+                    <span class="inviato-messaggio">ciao ho inviato il messaggio</span>
+                </div>
+                <!-- ricevuto -->
+                <div class="ricevuto-container">
+                    <span class="ricevuto-messaggio">ho visto il tuo messaggio!</span>
+                </div>
             </div>
+            <script>
+                // create a var with custum html content
+                var chatComponent = document.getElementById("chat-inner-messaggi");
+                var chatInner = chatComponent.innerHTML;
+                //clone node and put the content as child inside chatComponent
+                for (var i = 0; i < 15; i++) {
+                    var newNode = document.createElement("div");
+                    newNode.innerHTML = chatInner;
+                    chatComponent.appendChild(newNode);
+                }
+            </script>
+            <!-- form in basso -->
             <form id="chat-form">
                 <input type="text" name="" id="">
                 <input type="submit" value="&#xf1d8">

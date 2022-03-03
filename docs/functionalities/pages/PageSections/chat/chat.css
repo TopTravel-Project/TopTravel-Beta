@@ -1,0 +1,41 @@
+@import url(../../../../style.css);
+
+/*  */
+
+#chat-container {
+    position: relative;
+}
+
+#chat-container:before {
+    content: '';
+    background-image: url(../../../../images/chat/dark-chat-bg.jpg);
+    background-origin: cover;
+    filter: invert(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#chat-form {
+    width: 100%;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+#chat-form input[type=text] {
+    font-size: 1.5rem;
+}
+
+#chat-form input[type=submit] {
+    font-family: fontawesome;
+    font-size: 1.5rem;
+}

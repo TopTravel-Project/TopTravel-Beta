@@ -17,7 +17,7 @@
 #mappa-container #mappa-quadrato {
     aspect-ratio: 1;
     max-width: 80vw;
-    max-height: calc(100vh - var(--servizi-height) - 5rem);
+    max-height: calc(100vh - var(--servizi-height, 266px) - 5rem);
     display: grid;
     border-radius: 0.5rem;
     overflow: hidden;

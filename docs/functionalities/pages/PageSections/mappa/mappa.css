@@ -2,7 +2,67 @@
 
 /* */
 
+#mappa-container {
+    padding: 1rem 0.5rem 0 0;
+    display: grid;
+    justify-items: center;
+    position: relative;
+}
+
 #mappa-container iframe {
     width: 100%;
     height: 100%;
+}
+
+#mappa-container #mappa-quadrato {
+    aspect-ratio: 1;
+    max-width: 80vw;
+    max-height: calc(100vh - var(--servizi-height) - 5rem);
+    display: grid;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.servizio-container-posizione {
+    background: var(--50-blue);
+    border: 2px solid var(--100-blue);
+    display: grid;
+    place-items: center;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+.servizio-icona-posizione i {
+    font-size: 3rem;
+    color: var(--700-blue);
+}
+
+.servizio-testo-posizione span {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--700-blue);
+}
+
+.servizio-container-posizione:hover {
+    background: var(--100-blue);
+    border: 2px solid var(--700-blue);
+    transform: translateY(-0.5rem);
+    transition: all 0.2s ease-in-out;
+}
+
+#servizi-posizione {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: max-content;
+    margin: 1rem 1.5rem 1rem 1rem;
+    position: absolute;
+    bottom: 0.5rem;
+}
+
+#servizi-posizione>div {
+    flex-grow: 1;
+    min-width: calc(100vw / 5 - 2rem);
 }

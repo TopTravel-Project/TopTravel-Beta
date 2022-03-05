@@ -128,17 +128,6 @@
                     <span class="ricevuto-messaggio">ho visto il tuo messaggio!</span>
                 </div>
             </div>
-            <script>
-                // create a var with custum html content
-                var chatComponent = document.getElementById("chat-inner-messaggi");
-                var chatInner = chatComponent.innerHTML;
-                //clone node and put the content as child inside chatComponent
-                for (var i = 0; i < 15; i++) {
-                    var newNode = document.createElement("div");
-                    newNode.innerHTML = chatInner;
-                    chatComponent.appendChild(newNode);
-                }
-            </script>
             <!-- form in basso -->
             <form id="chat-form">
                 <input type="text" name="" id="" placeholder="scrivi un messaggio...">
@@ -161,14 +150,8 @@
     <script src="./functionalities/pages/navbar/navbar.js"></script>
     <script src="./functionalities/pages/navbar/navbarFunctionality.js"></script>
     <script src="./functionalities/pages/PageSections/mappa/mappa.js"></script>
-    <script>
-        sectionContainer.forEach(function(section) {
-            /* let r = Math.floor(Math.random() * 255);
-            let g = Math.floor(Math.random() * 255);
-            let b = Math.floor(Math.random() * 255);
-            section.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")"; */
-        });
-    </script>
+    <script src="./functionalities/pages/PageSections/chat/chat.js"></script>
+
 </body>
 
 </html>

@@ -1,2 +1,5 @@
 @import url("./functionalities/import.css");
 @import url("./functionalities/pages.css");
+html {
+    scroll-behavior: smooth;
+}

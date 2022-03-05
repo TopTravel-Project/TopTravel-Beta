@@ -1,7 +1,35 @@
-// create a var with custum html content
-var chatComponent = document.getElementById("chat-inner-messaggi");
-var chatInner = chatComponent.innerHTML;
+let chatForm = document.querySelector('#chat-form');
+let submitButton = chatForm.querySelector('input[type=submit]');
 
-setInterval(() => {
-    chatComponent.innerHTML += chatInner;
-}, 1000);
+let inviatoTemplate = document.querySelector("#inviato-template");
+let ricevutoTemplate = document.querySelector("#ricevuto-template");
+
+let chatContainer = document.querySelector('#chat-container #chat-inner-messaggi');
+
+chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let messaggioString = chatForm.querySelector('input[type=text]').value;
+    inviaMessaggio(messaggioString);
+    setTimeout(() => {
+        riceviMessaggio(messaggioString);
+    }, 100);
+    chatForm.querySelector('input[type=text]').value = '';
+});
+
+function inviaMessaggio(messaggioString) {
+    let messaggio = {
+        testo: messaggioString
+    };
+    let messaggioInviatoComponent = inviatoTemplate.content.cloneNode(true);
+    messaggioInviatoComponent.querySelector('.inviato-messaggio').textContent = messaggio.testo;
+    document.querySelector('#chat-inner-messaggi').appendChild(messaggioInviatoComponent);
+    chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+}
+
+/* rispondi all'utente con questa funzione */
+function riceviMessaggio(messaggioInviatoDalUtente) {
+    let messaggioRicevutoComponent = ricevutoTemplate.content.cloneNode(true);
+    messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
+    document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
+    chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+}

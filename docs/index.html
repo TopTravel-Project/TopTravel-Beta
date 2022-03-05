@@ -120,13 +120,18 @@
         <section id="chat-container">
             <div id="chat-inner-messaggi">
                 <!-- inviato -->
-                <div class="inviato-container">
-                    <span class="inviato-messaggio">ciao ho inviato il messaggio</span>
-                </div>
+                <template id="inviato-template">
+                    <div class="inviato-container">
+                        <span class="inviato-messaggio">undefined error</span>
+                    </div>
+                </template>
+
                 <!-- ricevuto -->
-                <div class="ricevuto-container">
-                    <span class="ricevuto-messaggio">ho visto il tuo messaggio!</span>
-                </div>
+                <template id="ricevuto-template">
+                    <div class="ricevuto-container">
+                        <span class="ricevuto-messaggio">undefined error</span>
+                    </div>
+                </template>
             </div>
             <!-- form in basso -->
             <form id="chat-form">

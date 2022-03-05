@@ -1,0 +1,36 @@
+@media screen and (max-width: 500px) {
+    nav {
+        width: 100vw;
+        height: auto;
+    }
+    .nav-icons-container {
+        display: flex;
+        box-shadow: 0 0 1rem var(--100-blue);
+    }
+    .nav-text-container {
+        top: 0;
+        left: 0;
+        font-size: clamp(1.2rem, 1.5rem, 10vw);
+        height: var(--display-height);
+        padding: 0;
+        width: 100vw;
+        transition: transform 1s ease-in-out;
+        justify-content: center;
+    }
+    .nav-text-container span {
+        color: var(--800-blue);
+        width: 100vw;
+        padding: 0;
+        padding-left: 2rem;
+    }
+    .nav-icons-container::before {
+        content: '';
+        top: 0;
+        left: calc(var(--index-pagina) * 100vw/5);
+        width: calc(100vw/5);
+        height: var(--indicatore-width);
+        box-shadow: 0 0 1.5rem 0.3rem var(--800-blue);
+        background-color: var(--700-blue);
+        transition: all 0.2s ease-in-out;
+    }
+}

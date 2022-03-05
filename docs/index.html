@@ -13,6 +13,7 @@
     <!-- for icons:
     2: https://fontawesome.com/ 
     -->
+    <link rel="stylesheet" href="https://fonticons-free-fonticons.netdna-ssl.com/kits/1ce05b4b/publications/117700/woff2.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
@@ -70,45 +71,48 @@
             </div>
             <div id="servizi-posizione">
                 <!-- 1 -->
-                <div class="servizio-container-posizione">
+                <div class="servizio-container-posizione" title="dove è il nostro hotel prenotato?">
                     <div class="servizio-icona-posizione">
-                        <i class="fa-solid fa-bed"></i> </div>
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
                     <div class="servizio-testo-posizione">
                         <span>Hotel</span>
                     </div>
                 </div>
                 <!-- 2 -->
-                <div class="servizio-container-posizione">
+                <div class="servizio-container-posizione" title="dove è la stazione dei autobus?">
                     <div class="servizio-icona-posizione">
-                        <i class="fa-solid fa-bed"></i> </div>
+                        <i class="fa-solid fa-bus-simple"></i>
+                    </div>
                     <div class="servizio-testo-posizione">
-                        <span>Hotel</span>
+                        <span>Bus</span>
                     </div>
                 </div>
                 <!-- 3 -->
-                <div class="servizio-container-posizione">
+                <div class="servizio-container-posizione" title="">
                     <div class="servizio-icona-posizione">
-                        <i class="fa-solid fa-bed"></i> </div>
+                        <i class="fa-solid fa-circle-h"></i>
+                    </div>
                     <div class="servizio-testo-posizione">
-                        <span>Hotel</span>
+                        <span>Ospedale</span>
                     </div>
                 </div>
                 <!-- 4 -->
                 <div class="servizio-container-posizione">
                     <div class="servizio-icona-posizione">
-                        <i class="fa-solid fa-bed"></i> </div>
+                        <i class="fa-solid fa-shield"></i> </div>
                     <div class="servizio-testo-posizione">
-                        <span>Hotel</span>
+                        <span>Polizia</span>
                     </div>
                 </div>
-                <!-- 5 -->
+                <!--                 
                 <div class="servizio-container-posizione">
                     <div class="servizio-icona-posizione">
                         <i class="fa-solid fa-bed"></i> </div>
                     <div class="servizio-testo-posizione">
                         <span>Hotel</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -116,25 +120,19 @@
         <section id="chat-container">
             <div id="chat-inner-messaggi">
                 <!-- inviato -->
-                <div class="inviato-container">
-                    <span class="inviato-messaggio">ciao ho inviato il messaggio</span>
-                </div>
+                <template id="inviato-template">
+                    <div class="inviato-container">
+                        <span class="inviato-messaggio">undefined error</span>
+                    </div>
+                </template>
+
                 <!-- ricevuto -->
-                <div class="ricevuto-container">
-                    <span class="ricevuto-messaggio">ho visto il tuo messaggio!</span>
-                </div>
+                <template id="ricevuto-template">
+                    <div class="ricevuto-container">
+                        <span class="ricevuto-messaggio">undefined error</span>
+                    </div>
+                </template>
             </div>
-            <script>
-                // create a var with custum html content
-                var chatComponent = document.getElementById("chat-inner-messaggi");
-                var chatInner = chatComponent.innerHTML;
-                //clone node and put the content as child inside chatComponent
-                for (var i = 0; i < 15; i++) {
-                    var newNode = document.createElement("div");
-                    newNode.innerHTML = chatInner;
-                    chatComponent.appendChild(newNode);
-                }
-            </script>
             <!-- form in basso -->
             <form id="chat-form">
                 <input type="text" name="" id="" placeholder="scrivi un messaggio...">
@@ -157,14 +155,8 @@
     <script src="./functionalities/pages/navbar/navbar.js"></script>
     <script src="./functionalities/pages/navbar/navbarFunctionality.js"></script>
     <script src="./functionalities/pages/PageSections/mappa/mappa.js"></script>
-    <script>
-        sectionContainer.forEach(function(section) {
-            /* let r = Math.floor(Math.random() * 255);
-            let g = Math.floor(Math.random() * 255);
-            let b = Math.floor(Math.random() * 255);
-            section.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")"; */
-        });
-    </script>
+    <script src="./functionalities/pages/PageSections/chat/chat.js"></script>
+
 </body>
 
 </html>

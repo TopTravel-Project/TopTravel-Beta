@@ -16,7 +16,7 @@
 
 #mappa-container #mappa-quadrato {
     aspect-ratio: 1;
-    max-width: 80vw;
+    width: 80vw;
     max-height: calc(100vh - var(--servizi-height, 266px) - 5rem);
     display: grid;
     border-radius: 0.5rem;
@@ -32,6 +32,7 @@
     padding: 1rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
     box-sizing: border-box;
+    width: 15rem;
 }
 
 .servizio-icona-posizione i {
@@ -57,12 +58,19 @@
     flex-wrap: wrap;
     gap: 1rem;
     height: max-content;
-    margin: 1rem 1.5rem 1rem 1rem;
-    position: absolute;
-    bottom: 0.5rem;
+    margin: 1rem;
+    margin-top: 2rem;
 }
 
 #servizi-posizione>div {
     flex-grow: 1;
     min-width: calc(100vw / 5 - 2rem);
+}
+
+@media screen and (max-width: 600px) {
+    .servizio-container-posizione {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        padding: 1rem;
+    }
 }

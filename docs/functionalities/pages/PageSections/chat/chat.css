@@ -42,11 +42,11 @@
 }
 
 #chat-inner-messaggi {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    height: calc(100vh - 5.5rem);
+    height: calc(100vh - 4.5rem);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -62,7 +62,6 @@
     padding: 0.5rem 1rem;
     border-radius: 1rem 0.1rem 1rem 1rem;
     animation: inviato-animation 0.2s cubic-bezier(0, 0, 0.5, 1.5);
-    filter: drop-shadow(0 0 0.2rem var(--500-blue));
 }
 
 #chat-inner-messaggi .ricevuto-messaggio {
@@ -70,7 +69,6 @@
     padding: 0.5rem 1rem;
     border-radius: 0.1rem 1rem 1rem 1rem;
     animation: ricevuto-animation 0.2s cubic-bezier(0, 0, 0.5, 1.5);
-    filter: drop-shadow(0 0 0.2rem var(--200-blue));
 }
 
 #chat-inner-messaggi .inviato-container {

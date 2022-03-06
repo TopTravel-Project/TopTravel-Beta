@@ -20,16 +20,20 @@ function inviaMessaggio(messaggioString) {
     let messaggio = {
         testo: messaggioString
     };
-    let messaggioInviatoComponent = inviatoTemplate.content.cloneNode(true);
-    messaggioInviatoComponent.querySelector('.inviato-messaggio').textContent = messaggio.testo;
-    document.querySelector('#chat-inner-messaggi').appendChild(messaggioInviatoComponent);
-    chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    if (messaggio.testo.length > 0) {
+        let messaggioInviatoComponent = inviatoTemplate.content.cloneNode(true);
+        messaggioInviatoComponent.querySelector('.inviato-messaggio').textContent = messaggio.testo;
+        document.querySelector('#chat-inner-messaggi').appendChild(messaggioInviatoComponent);
+        chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    }
 }
 
 /* rispondi all'utente con questa funzione */
 function riceviMessaggio(messaggioInviatoDalUtente) {
-    let messaggioRicevutoComponent = ricevutoTemplate.content.cloneNode(true);
-    messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
-    document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
-    chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    if (messaggioInviatoDalUtente.length > 0) {
+        let messaggioRicevutoComponent = ricevutoTemplate.content.cloneNode(true);
+        messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
+        document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
+        chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    }
 }

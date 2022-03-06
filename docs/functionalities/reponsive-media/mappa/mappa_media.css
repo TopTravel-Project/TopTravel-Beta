@@ -1,0 +1,8 @@
+@media (max-width: 500px) {
+    #mappa-container {
+        padding: 1rem 0 0 0;
+    }
+    #mappa-container #mappa-quadrato {
+        width: 70vw;
+    }
+}

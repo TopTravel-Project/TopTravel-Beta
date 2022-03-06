@@ -1,0 +1,15 @@
+@media (max-width: 500px) {
+    main {
+        position: fixed;
+        top: var(--nav-height, 80px);
+        left: 0;
+        grid-template-columns: repeat(6, 100vw);
+    }
+    main {
+        margin-left: calc(-100vw * var(--indexPagina, 1));
+    }
+    main>section {
+        height: calc(100vh - var(--nav-height, 80px));
+        box-sizing: border-box;
+    }
+}

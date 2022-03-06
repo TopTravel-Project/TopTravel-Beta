@@ -1,4 +1,11 @@
+@import url("../../../style.css");
+
+/*  */
+
 @media screen and (max-width: 500px) {
+    * {
+        --n-icons-nav: 4;
+    }
     nav {
         width: 100vw;
         height: auto;
@@ -8,14 +15,10 @@
         box-shadow: 0 0 1rem var(--100-blue);
     }
     .nav-text-container {
-        top: 0;
-        left: 0;
-        font-size: clamp(1.2rem, 1.5rem, 10vw);
-        height: var(--display-height);
-        padding: 0;
-        width: 100vw;
-        transition: transform 1s ease-in-out;
-        justify-content: center;
+        display: none;
+    }
+    .nav-icons-container div:first-of-type {
+        display: none;
     }
     .nav-text-container span {
         color: var(--800-blue);
@@ -26,11 +29,61 @@
     .nav-icons-container::before {
         content: '';
         top: 0;
-        left: calc(var(--index-pagina) * 100vw/5);
-        width: calc(100vw/5);
+        left: calc((var(--indexPagina) - 1) * 100vw / var(--n-icons-nav));
+        width: calc(100vw/var(--n-icons-nav));
         height: var(--indicatore-width);
-        box-shadow: 0 0 1.5rem 0.3rem var(--800-blue);
-        background-color: var(--700-blue);
+        box-shadow: 0 0.05rem 1.5rem 0.3rem var(--800-blue);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav-icons-container>div::after {
+        content: attr(title);
+        position: absolute;
+        left: initial;
+        padding: 0;
+        border-radius: 0;
+        transform: translateY(0);
         transition: all 0.2s ease-in-out;
+        background-color: initial;
+        box-shadow: initial;
+        z-index: initial;
+    }
+    .nav-icons-container>div::after {
+        content: attr(title);
+        top: calc(var(--nav-height, 80px)/3 + var(--nav-height, 80px)/2 - 0.5rem);
+        font-size: 3vw;
+        color: var(--800-blue);
+        opacity: 0;
+    }
+    .nav-icons-container>div:hover::after {
+        animation: initial;
+        transform: translateY(-0.5rem);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* la numerazione inizia da 2 su mobile */
+    .nav-icons-container>div:nth-of-type(2)::after {
+        content: "mappa";
+    }
+    .nav-icons-container>div:nth-of-type(3)::after {
+        content: "chat";
+    }
+    .nav-icons-container>div:nth-of-type(4)::after {
+        content: "programma";
+    }
+    .nav-icons-container>div:nth-of-type(5)::after {
+        content: "info";
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav-icons-container>div>i {
+        transform: translateY(0);
+    }
+    .nav-icons-container>div:hover>i {
+        transform: translateY(-0.5rem);
     }
 }

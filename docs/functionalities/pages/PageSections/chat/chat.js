@@ -20,16 +20,37 @@ function inviaMessaggio(messaggioString) {
     let messaggio = {
         testo: messaggioString
     };
-    let messaggioInviatoComponent = inviatoTemplate.content.cloneNode(true);
-    messaggioInviatoComponent.querySelector('.inviato-messaggio').textContent = messaggio.testo;
-    document.querySelector('#chat-inner-messaggi').appendChild(messaggioInviatoComponent);
-    chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    if (messaggio.testo.length > 0) {
+        let messaggioInviatoComponent = inviatoTemplate.content.cloneNode(true);
+        messaggioInviatoComponent.querySelector('.inviato-messaggio').textContent = messaggio.testo;
+        document.querySelector('#chat-inner-messaggi').appendChild(messaggioInviatoComponent);
+        chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    }
 }
 
 /* rispondi all'utente con questa funzione */
 function riceviMessaggio(messaggioInviatoDalUtente) {
-    let messaggioRicevutoComponent = ricevutoTemplate.content.cloneNode(true);
-    messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
-    document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
-    chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+    if (messaggioInviatoDalUtente.length > 0) {
+        let messaggioRicevutoComponent = ricevutoTemplate.content.cloneNode(true);
+        messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
+        document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
+        chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+
+
+
+        function findAnswerBot(messaggioInviatoDalUtente) {
+            let score = -99999;
+            let bestResult;
+
+            for (let i = 0; i < domandeArray.length; i++) {
+                let results = fuzzysort.go('ci', domandeArray[i]);
+
+                bestResult = results[0];
+                score = bestResult.score;
+                console.log(score + " " + i);
+            }
+        }
+
+        findAnswerBot(messaggioInviatoDalUtente);
+    }
 }

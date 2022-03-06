@@ -1,0 +1,5 @@
+@media(max-width: 500px) {
+    #chat-inner-messaggi {
+        height: calc(100vh - 4.5rem - var(--nav-height, 80px));
+    }
+}

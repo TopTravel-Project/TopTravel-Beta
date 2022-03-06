@@ -21,7 +21,11 @@
     display: grid;
     border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+#mappa-container #mappa-quadrato:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
 }
 
 .servizio-container-posizione {

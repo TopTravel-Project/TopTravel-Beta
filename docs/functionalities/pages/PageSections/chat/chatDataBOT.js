@@ -36,3 +36,10 @@ let chatBotJSON = {
         "risposte": risposteArray[3]
     }
 }
+
+function checkMessaggio(messaggioString) {
+    const result = fuzzysort.go(messaggioString, domandeArray);
+    console.log(result.score);
+}
+
+checkMessaggio("ciao");

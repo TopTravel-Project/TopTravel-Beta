@@ -36,5 +36,3 @@ let chatBotJSON = {
         "risposte": risposteArray[3]
     }
 }
-
-console.log(fuzzysort);

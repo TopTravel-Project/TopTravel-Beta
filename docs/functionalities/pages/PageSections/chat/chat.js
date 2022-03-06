@@ -35,5 +35,22 @@ function riceviMessaggio(messaggioInviatoDalUtente) {
         messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
         document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
         chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+
+
+
+        function findAnswerBot(messaggioInviatoDalUtente) {
+            let score = -99999;
+            let bestResult;
+
+            for (let i = 0; i < domandeArray.length; i++) {
+                let results = fuzzysort.go('ci', domandeArray[i]);
+
+                bestResult = results[0];
+                score = bestResult.score;
+                console.log(score + " " + i);
+            }
+        }
+
+        findAnswerBot(messaggioInviatoDalUtente);
     }
 }

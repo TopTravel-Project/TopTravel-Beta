@@ -36,19 +36,26 @@ function riceviMessaggio(messaggioInviatoDalUtente) {
         document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
         chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
 
-
-
         function findAnswerBot(messaggioInviatoDalUtente) {
             let score = -99999;
             let bestResult;
 
-            for (let i = 0; i < domandeArray.length; i++) {
-                let results = fuzzysort.go('ci', domandeArray[i]);
+            function bestSimilarQuestion(messaggioInviatoDalUtente) {
+                domandeArray.forEach((tipologia, index) => {
+                    let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
 
-                bestResult = results[0];
-                score = bestResult.score;
-                console.log(score + " " + i);
+                    if (results.length != 0) {
+                        bestResult = results[0];
+                        return bestResult;
+                    }
+
+                    return 'errore';
+                });
             }
+
+            let domandaStringRisultato = bestSimilarQuestion(messaggioInviatoDalUtente);
+
+
         }
 
         findAnswerBot(messaggioInviatoDalUtente);

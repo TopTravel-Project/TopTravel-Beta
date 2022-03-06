@@ -4,6 +4,8 @@
 
 #chat-container {
     position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 #chat-container:before {
@@ -26,9 +28,6 @@
     grid-template-columns: 5fr 1fr;
     gap: 0.5rem;
     padding: 0.5rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     box-sizing: border-box;
 }
 
@@ -49,6 +48,7 @@
     height: calc(100vh - 4.5rem);
     overflow-y: auto;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 #chat-inner-messaggi>div {

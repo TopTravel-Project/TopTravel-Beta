@@ -37,9 +37,15 @@ let chatBotJSON = {
     }
 }
 
-function checkMessaggio(messaggioString) {
-    const result = fuzzysort.go(messaggioString, domandeArray);
-    console.log(result.score);
-}
-
-checkMessaggio("ciao");
+console.log(fuzzysort)
+    /* const result = fuzzysort.single('query', 'some string that contains my query.')
+        // exact match returns a score of 0. lower is worse
+    result.score // -59
+    console.log('result:', result)
+    result.indexes // [29, 30, 31, 32, 33]
+    console.log(result)
+    result.target // some string that contains my query.
+    console.log(result)
+    result.obj // reference to your original obj when using options.key
+    console.log(result)
+    fuzzysort.highlight(result, '<b>', '</b>') // some string that contains my <b>query</b>. */

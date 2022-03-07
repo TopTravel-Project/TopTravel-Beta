@@ -54,9 +54,10 @@ function findAnswerIndexBot(messaggioInviatoDalUtente) {
         domandeArray.forEach((tipologia, index) => {
             /* console.log("loop iniziato" + index) */
             let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
-
+            /* console.log('results:', results) */
             if (results.length != 0) {
                 bestResult = results[0];
+
                 if (bestResult.score > score) {
                     score = bestResult.score;
                     /* console.log("index" + index); */

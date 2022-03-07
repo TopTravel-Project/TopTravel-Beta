@@ -30,4 +30,7 @@
     .servizio-testo-posizione span {
         font-size: 2vh;
     }
+    #mappa-container #mappa-quadrato {
+        width: 80vw;
+    }
 }

@@ -4,8 +4,6 @@
 
 #chat-container {
     position: relative;
-    display: grid;
-    grid-template-rows: 1fr auto;
 }
 
 #chat-container:before {

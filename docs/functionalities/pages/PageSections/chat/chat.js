@@ -5,7 +5,7 @@ let inviatoTemplate = document.querySelector("#inviato-template");
 let ricevutoTemplate = document.querySelector("#ricevuto-template");
 
 let chatContainer = document.querySelector('#chat-container #chat-inner-messaggi');
-
+let indexDomanda;
 chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let messaggioString = chatForm.querySelector('input[type=text]').value;
@@ -31,44 +31,40 @@ function inviaMessaggio(messaggioString) {
 /* rispondi all'utente con questa funzione */
 function riceviMessaggio(messaggioInviatoDalUtente) {
     if (messaggioInviatoDalUtente.length > 0) {
+        // clona il messaggio
         let messaggioRicevutoComponent = ricevutoTemplate.content.cloneNode(true);
-        messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').textContent = "hello world";
+
+        findAnswerIndexBot(messaggioInviatoDalUtente);
+        let answerString = risposteArray[indexDomanda];
+        messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').innerHTML = answerString;
+
         document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
+
         chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
-
-        function findAnswerBot(messaggioInviatoDalUtente) {
-            let score;
-            let bestResult;
-
-            function bestSimilarQuestion(messaggioInviatoDalUtente) {
-                let score = -9999;
-
-                domandeArray.forEach((tipologia, index) => {
-                    console.log("loop iniziato" + index)
-                    let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
-
-                    if (results.length != 0) {
-                        bestResult = results[0];
-
-                        console.log("index:" + index);
-                        console.log(score);
-                        console.log(bestResult);
-                        console.log(" ");
-
-                        if (bestResult.score > score) {
-                            score = bestResult.score;
-                            console.log("index");
-                            return index;
-                        }
-                    }
-
-                    return 'errore';
-                });
-            }
-
-            bestSimilarQuestion(messaggioInviatoDalUtente);
-        }
-
-        findAnswerBot(messaggioInviatoDalUtente);
     }
+}
+
+function findAnswerIndexBot(messaggioInviatoDalUtente) {
+    let bestResult;
+    indexDomanda = null;
+
+    function bestSimilarQuestion(messaggioInviatoDalUtente) {
+        let score = -9999;
+
+        domandeArray.forEach((tipologia, index) => {
+            /* console.log("loop iniziato" + index) */
+            let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
+
+            if (results.length != 0) {
+                bestResult = results[0];
+                if (bestResult.score > score) {
+                    score = bestResult.score;
+                    /* console.log("index" + index); */
+                    indexDomanda = index;
+                }
+            }
+        });
+    }
+
+    bestSimilarQuestion(messaggioInviatoDalUtente);
 }

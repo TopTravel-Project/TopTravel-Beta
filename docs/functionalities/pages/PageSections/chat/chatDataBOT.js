@@ -12,12 +12,13 @@ let mapIframe = document.querySelector('#mappa-quadrato iframe');
 let MapPosizione = mapIframe.src.split("&")[1].split("=")[1];
 
 let risposteArray = [
-    ["ciao anche a te", "buongiorno", "buona giornata!"],
-    ['adesso sono le ore ${orarioAttuale}'],
-    ['oggi è il ${giornoAttuale}'],
-    ['siete in ${MapPosizione} \n tra poco ti apro la mappa']
-]
+    "buongiorno anche a te!",
+    'adesso sono le ore ${orarioAttuale}',
+    'oggi è il ${giornoAttuale}',
+    'siamo in ${MapPosizione}'
+];
 
+/* 
 let chatBotJSON = {
     "saluto": {
         "domande": domandeArray[0],
@@ -35,4 +36,4 @@ let chatBotJSON = {
         "domande": domandeArray[3],
         "risposte": risposteArray[3]
     }
-}
+} */

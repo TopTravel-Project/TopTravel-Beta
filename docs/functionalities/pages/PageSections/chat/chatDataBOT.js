@@ -1,8 +1,9 @@
 let domandeArray = [
     ["ciao", "ciao a tutti", "buongiorno"],
-    ["che ore sono", "ora", "ora attaule", "che ora è?"],
-    ["che giorno è oggi", "quando è oggi", "quando è oggi?"],
-    ["dove siete", "mi sono perso", "dove siete?", "che citta siete in", "la posizione?", "la mappa"],
+    ["che ore sono", "ora", "ora attuale", "che ora è", "orario"],
+    ["che giorno è oggi", "quando", "data", "quale data", "quale giorno"],
+    ["dove siete", "mi sono perso", "che citta siete in", "la posizione", "la mappa", "posizione", "gps"],
+    ["sei un robot"]
 ];
 
 let orarioAttuale = new Date().getHours() + ":" + new Date().getMinutes();
@@ -15,7 +16,8 @@ let risposteArray = [
     "buongiorno anche a te!",
     'adesso sono le ore ' + orarioAttuale,
     'oggi è il ' + giornoAttuale,
-    'siamo in ' + MapPosizione
+    'siamo in ' + MapPosizione,
+    'sì sono un robot. Come posso aiutare?',
 ];
 
 /* 

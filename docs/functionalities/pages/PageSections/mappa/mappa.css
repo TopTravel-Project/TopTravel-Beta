@@ -69,17 +69,3 @@
     flex-grow: 1;
     min-width: calc(100vw / 5 - 2rem);
 }
-
-@media screen and (max-width: 600px) {
-    .servizio-container-posizione {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 1rem;
-        padding: 1rem 1.5rem;
-    }
-    .servizio-icona-posizione i {
-        font-size: 3rem;
-        color: var(--700-blue);
-        width: 4rem;
-    }
-}

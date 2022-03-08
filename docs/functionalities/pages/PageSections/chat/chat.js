@@ -6,13 +6,26 @@ let ricevutoTemplate = document.querySelector("#ricevuto-template");
 
 let chatContainer = document.querySelector('#chat-container #chat-inner-messaggi');
 let indexDomanda;
+
+let bugError = 0;
+
+
 chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let messaggioString = chatForm.querySelector('input[type=text]').value;
+
     inviaMessaggio(messaggioString);
+
+    messaggioString = messaggioString.toLowerCase();
+    // i simboli vengono cancellati
+    messaggioString = messaggioString.replace(/[?.,!]/g, '');
+    // se l'ultima lettera è spazio, diventa vuota
+    messaggioString = messaggioString.replace(/\s+$/, '');
+
     setTimeout(() => {
         riceviMessaggio(messaggioString);
     }, 100);
+
     chatForm.querySelector('input[type=text]').value = '';
 });
 
@@ -36,7 +49,23 @@ function riceviMessaggio(messaggioInviatoDalUtente) {
 
         findAnswerIndexBot(messaggioInviatoDalUtente);
         let answerString = risposteArray[indexDomanda];
-        messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').innerHTML = answerString;
+
+        if (answerString != undefined || answerString != null) {
+            bugError = 0;
+            messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').innerHTML = answerString;
+        } else {
+            bugError++;
+            if (bugError >= 2) {
+                messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').innerHTML = 'Non ho capito, riprova...' +
+                    '<br> il mio programma non è ancora completo' +
+                    '<br><br>' +
+                    'se vuoi, puoi contattarmi tramite email:' +
+                    '<br> <a href = "mailto:progetto.turismo.2022@gmail.com">progetto.turismo.2022@gmail.com</a>' +
+                    '<br><br>' + 'scrivi il messaggio che hai inviato per ottenere l\'errore';
+            } else {
+                messaggioRicevutoComponent.querySelector('.ricevuto-messaggio').innerHTML = "Non ho capito, riprova";
+            }
+        }
 
         document.querySelector('#chat-inner-messaggi').appendChild(messaggioRicevutoComponent);
 
@@ -50,24 +79,19 @@ function findAnswerIndexBot(messaggioInviatoDalUtente) {
 
     function bestSimilarQuestion(messaggioInviatoDalUtente) {
         let score = -9999;
-        console.clear();
+
         domandeArray.forEach((tipologia, index) => {
-            console.log("loop iniziato " + index)
+
             let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
-            console.log('results:', results)
+
+            console.log(results.length);
             if (results.length != 0) {
-                console.log(index + ' result.score: ' + results.score);
-                console.log(index + ' result.index: ' + results.index);
-                console.log(index + ' result.target: ' + results.target);
+
                 bestResult = results[0];
 
-                console.log("bestResult.score: " + bestResult.score);
                 if (bestResult.score > score) {
                     score = bestResult.score;
-                    console.log("index" + index);
                     indexDomanda = index;
-                    console.log("ho scelto la " + index + " perchè è la migliore, con il risultato " + bestResult.score);
-                    console.log("inoltre bestResult.score: " + bestResult.score);
                 }
             }
         });

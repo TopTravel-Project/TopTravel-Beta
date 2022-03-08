@@ -50,18 +50,24 @@ function findAnswerIndexBot(messaggioInviatoDalUtente) {
 
     function bestSimilarQuestion(messaggioInviatoDalUtente) {
         let score = -9999;
-
+        console.clear();
         domandeArray.forEach((tipologia, index) => {
-            /* console.log("loop iniziato" + index) */
+            console.log("loop iniziato " + index)
             let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
-            /* console.log('results:', results) */
+            console.log('results:', results)
             if (results.length != 0) {
+                console.log(index + ' result.score: ' + results.score);
+                console.log(index + ' result.index: ' + results.index);
+                console.log(index + ' result.target: ' + results.target);
                 bestResult = results[0];
 
+                console.log("bestResult.score: " + bestResult.score);
                 if (bestResult.score > score) {
                     score = bestResult.score;
-                    /* console.log("index" + index); */
+                    console.log("index" + index);
                     indexDomanda = index;
+                    console.log("ho scelto la " + index + " perchè è la migliore, con il risultato " + bestResult.score);
+                    console.log("inoltre bestResult.score: " + bestResult.score);
                 }
             }
         });

@@ -4,7 +4,7 @@ fetch(url)
         return response.json();
     })
     .then((dataJSON) => {
-        console.log(dataJSON.orario);
-        let programmaOrarioArray = Object.keys(dataJSON.orario);
-        console.log(programmaOrarioArray);
+        dataJSON.forEach((item, index) => {
+            console.log(dataJSON[index].evento);
+        })
     });

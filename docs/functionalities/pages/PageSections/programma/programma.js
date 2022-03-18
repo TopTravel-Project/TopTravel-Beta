@@ -1,3 +1,4 @@
+let eventoContainerTemplate = document.querySelectorAll(".programma-template")[0];
 const url = "https://sheetdb.io/api/v1/ugfngdyqadjky";
 fetch(url)
     .then((response) => {
@@ -5,12 +6,15 @@ fetch(url)
     })
     .then((dataJSON) => {
         dataJSON.forEach((item, index) => {
-            /* every item, create a new html element and put the dataJSON[index].evento inside it */
-            let newElement = document.createElement("div");
-            newElement.innerHTML = dataJSON[index].evento;
+            let eventoContainer = eventoContainerTemplate.content.cloneNode(true);
 
-            document.getElementById("programma-container").appendChild(newElement);
+            let orarioSpan = eventoContainer.querySelectorAll(".orario-evento-programma")[0];
+            let descrizioneSpan = eventoContainer.querySelectorAll(".descrizione-evento-programma")[0];
 
-            console.log(dataJSON[index].evento);
+            orarioSpan.textContent = dataJSON[index].orario;
+            descrizioneSpan.textContent = dataJSON[index].evento;
+
+            document.getElementById("programma-container").appendChild(eventoContainer);
+
         })
     });

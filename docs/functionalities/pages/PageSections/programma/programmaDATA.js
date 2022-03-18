@@ -3,6 +3,8 @@ fetch(url)
     .then((response) => {
         return response.json();
     })
-    .then((data) => {
-        console.table(data);
+    .then((dataJSON) => {
+        console.log(dataJSON.orario);
+        let programmaOrarioArray = Object.keys(dataJSON.orario);
+        console.log(programmaOrarioArray);
     });

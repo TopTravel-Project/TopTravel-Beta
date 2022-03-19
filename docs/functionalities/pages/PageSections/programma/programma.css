@@ -3,41 +3,80 @@
 /*  */
 
 #programma-container {
+    display: grid;
+    place-content: center;
+}
+
+.evento-full-component {
+    margin: 1rem;
+    border-radius: 0.5rem;
     padding: 0.5rem;
     display: grid;
-    place-items: center;
+    gap: 0;
+    box-shadow: 0 0.1rem 0.3rem var(--50-blue);
+    border: 0.1rem solid transparent;
+}
+
+.evento-full-component:hover~div {
+    margin: 1.5rem 1rem;
+}
+
+.evento-full-component:hover {
+    gap: 1rem;
+    border: 0.1rem solid var(--200-blue);
 }
 
 .evento-container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    box-shadow: 0 0.1rem 0.1rem var(--50-blue);
-    margin: 1rem;
     border-radius: 0.5rem;
+    grid-template-columns: 1fr 5fr;
     transition: all 0.1s ease-in-out;
+    gap: 0.5rem;
 }
 
 .evento-container>div {
-    /*     outline: 1px solid red; */
     padding: 0.5rem 1rem;
-    background: var(--50-blue);
+    border: 0.1rem solid var(--50-blue);
     border-radius: 0.2rem;
-    margin: 0.5rem;
     display: grid;
     place-items: center;
 }
 
 #programma-table-container {
-    height: 80vh;
+    height: 90vh;
     overflow-y: auto;
-}
-
-.evento-container:hover {
-    box-shadow: 0 0.25rem 0.5rem var(--100-blue);
 }
 
 .orario-evento-programma {
     font-weight: bold;
     font-size: 1.5rem;
     text-align: center
+}
+
+.evento-info-button {
+    height: 0;
+    opacity: 0.5;
+    place-items: center;
+    background: var(--500-blue);
+    color: white;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    display: grid;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    font-size: 0;
+    width: 100%;
+}
+
+.evento-full-component:hover .evento-info-button {
+    height: 5rem;
+    opacity: 1;
+    font-size: 1.5rem;
+    transition-duration: 0.3s;
+}
+
+.evento-info-button:hover {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem var(--500-blue)
 }

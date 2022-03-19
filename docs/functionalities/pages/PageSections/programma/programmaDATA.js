@@ -15,6 +15,5 @@ fetch(url)
             descrizioneSpan.textContent = dataJSON[index].evento;
 
             document.getElementById("programma-table-container").appendChild(eventoContainer);
-
         })
     });

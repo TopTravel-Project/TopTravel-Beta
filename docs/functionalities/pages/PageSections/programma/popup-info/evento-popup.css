@@ -1,0 +1,60 @@
+@import url("../../../../../style.css");
+
+/*  */
+
+#programma-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#more-info-evento {
+    height: max-content;
+    display: grid;
+    gap: 1rem;
+    max-width: 20rem;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.5rem var(--50-blue);
+}
+
+#evento-grid-image img {
+    width: 100%;
+    border-radius: 0.3rem;
+}
+
+#evento-grid-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem;
+}
+
+#evento-grid-image img:nth-of-type(3) {
+    grid-column: 1/3;
+}
+
+#evento-btn-dettagli-container {
+    display: grid;
+    height: 3rem;
+}
+
+#evento-btn-dettagli-container button {
+    font-size: 1rem;
+    font-family: poppins;
+    background: var(--50-blue);
+    border: 0.1rem solid var(--200-blue);
+    border-radius: 0.2rem;
+}
+
+#evento-btn-dettagli-container button:hover {
+    background: var(--200-blue);
+    border: 0.1rem solid var(--500-blue);
+    border-radius: 0.5rem;
+}
+
+.popup-open {
+    display: grid;
+}
+
+.popup-close {
+    display: none;
+}

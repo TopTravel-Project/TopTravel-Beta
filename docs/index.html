@@ -142,26 +142,50 @@
         <!-- 3 -->
         <section id="programma-container">
             <div id="programma-table-container">
-                <!-- qui si generano i tempi -->
+                <input type="checkbox" id="info-checkbox-btn">
+                <!-- qui si generano i tempi dal api del excel -->
             </div>
+
+            <div id="more-info-evento">
+                <div id="evento-grid-image">
+                    <img src="./images/evento/wallpapers/dark/0.jpg" alt="">
+                    <img src="./images/evento/wallpapers/light/0.jpg" alt="">
+                    <img src="./images/evento/wallpapers/light/4.jpg" alt="">
+                </div>
+                <div id="evento-btn-dettagli-container">
+                    <button>
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>posizione località</span>
+                    </button>
+                </div>
+            </div>
+
             <!-- template 0 -->
             <template class="programma-template">
-                <div class="evento-container">
-                    <!-- 0... metti l'orario -->
-                    <div>
-                        <span class="orario-evento-programma">
-                            error
-                        </span>
+                <div class="evento-full-component">
+                    <div class="evento-container">
+                        <div>
+                            <!-- 0... metti l'orario -->
+                            <span class="orario-evento-programma">
+                                error
+                            </span>
+                        </div>
+                        <!-- 1... metti la descrizione-->
+                        <div>
+                            <span class="descrizione-evento-programma">
+                                error
+                            </span>
+                        </div>
                     </div>
-                    <!-- 1... metti la descrizione-->
-                    <div>
-                        <span class="descrizione-evento-programma">
-                            error
-                        </span>
-                    </div>
+
+                    <!-- 2... più info -->
+                    <label for="info-checkbox-btn">
+                        <div class="evento-info-button">
+                            dettagli
+                        </div>
+                    </label>
                 </div>
             </template>
-
         </section>
 
         <!-- 4 -->
@@ -184,8 +208,8 @@
     <script src="./functionalities/pages/PageSections/chat/chat.js"></script>
     <script src="./functionalities/pages/PageSections/chat/chatDataBOT.js"></script>
 
-    <script src="./functionalities/pages/PageSections/programma/programma.js"></script>
     <script src="./functionalities/pages/PageSections/programma/programmaDATA.js"></script>
+    <script src="./functionalities/pages/PageSections/programma/programma.js"></script>
 
 </body>
 

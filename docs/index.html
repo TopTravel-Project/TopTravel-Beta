@@ -146,16 +146,23 @@
                 <!-- qui si generano i tempi dal api del excel -->
             </div>
 
-            <div id="more-info-evento">
+            <div id="overlay-popup-evento" class="popup-close">
+                <!-- overlay che si toglie, dinamicamente -->
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div id="more-info-evento" class="popup-close">
                 <div id="evento-grid-image">
                     <img src="./images/evento/wallpapers/dark/0.jpg" alt="">
                     <img src="./images/evento/wallpapers/light/0.jpg" alt="">
                     <img src="./images/evento/wallpapers/light/4.jpg" alt="">
                 </div>
+                <div id="evento-popup-description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perspiciatis voluptas beatae magni vitae soluta excepturi dolorum placeat ea exercitationem? Iste hic accusantium veritatis assumenda nulla quasi iusto adipisci quae!
+                </div>
                 <div id="evento-btn-dettagli-container">
                     <button>
                         <i class="fa-solid fa-map-location-dot"></i>
-                        <span>posizione località</span>
+                        <span>posizione</span>
                     </button>
                 </div>
             </div>
@@ -180,8 +187,9 @@
 
                     <!-- 2... più info -->
                     <label for="info-checkbox-btn">
-                        <div class="evento-info-button">
-                            dettagli
+                        <div class="evento-info-button" title="più dettagli sul evento">
+                            <!-- dettagli -->
+                            <i class="fa-solid fa-circle-info"></i>
                         </div>
                     </label>
                 </div>

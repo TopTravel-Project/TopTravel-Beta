@@ -1,4 +1,3 @@
-let dettagliBtn = document.querySelectorAll('.evento-info-button');
 let popupEvento = document.querySelector('#more-info-evento');
 let popupCheckBox = document.querySelector('#info-checkbox-btn');
 
@@ -30,6 +29,24 @@ popupCheckBox.addEventListener('change', (item) => {
         popupEvento.classList.add('popup-close');
         overlayPopup.classList.remove('popup-open');
         overlayPopup.classList.add('popup-close');
-
     }
+});
+
+/* onload page event */
+window.addEventListener('load', () => {
+
+    let dettagliBtn = document.querySelectorAll('.evento-info-button');
+
+    dettagliBtn.forEach((item) => {
+        item.addEventListener("mousemove", (e) => {
+            let x = e.clientX;
+            console.log('x:', x)
+            let y = e.clientY;
+            console.log('y:', y)
+
+            item.style.setProperty("--x-btn", x);
+            item.style.setProperty("--y-btn", y);
+        });
+    });
+
 });

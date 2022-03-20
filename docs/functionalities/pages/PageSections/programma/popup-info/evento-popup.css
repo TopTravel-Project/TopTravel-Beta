@@ -12,8 +12,8 @@
     height: max-content;
     display: grid;
     gap: 1rem;
-    width: 50vw;
-    max-width: 70vh;
+    width: 70vw;
+    max-width: 50vh;
     padding: 1rem;
     padding-bottom: 2rem;
     position: fixed;
@@ -84,6 +84,10 @@
     right: 1rem;
     color: white;
     font-size: 2rem;
+}
+
+#evento-popup-description {
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
 }
 
 .popup-open {

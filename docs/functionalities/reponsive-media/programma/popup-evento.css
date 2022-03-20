@@ -1,0 +1,8 @@
+@media screen and (max-width: 500px) {
+    #overlay-popup-evento i {
+        position: absolute;
+        top: calc(var(--nav-height) + 1rem);
+        right: 1rem;
+        font-size: 2rem;
+    }
+}

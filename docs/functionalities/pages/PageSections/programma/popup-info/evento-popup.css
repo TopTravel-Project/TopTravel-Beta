@@ -12,9 +12,24 @@
     height: max-content;
     display: grid;
     gap: 1rem;
-    max-width: 20rem;
+    width: 50vw;
+    max-width: 70vh;
     padding: 1rem;
-    box-shadow: 0 0.2rem 0.5rem var(--50-blue);
+    padding-bottom: 2rem;
+    position: fixed;
+    background-color: white;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+#overlay-popup-evento {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 #evento-grid-image img {
@@ -41,13 +56,22 @@
     font-size: 1rem;
     font-family: poppins;
     background: var(--50-blue);
-    border: 0.1rem solid var(--200-blue);
+    border: 0.12rem solid var(--200-blue);
     border-radius: 0.2rem;
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+    padding: 1rem;
+}
+
+#evento-btn-dettagli-container i {
+    font-size: 1.5rem;
+    color: var(--800-blue);
 }
 
 #evento-btn-dettagli-container button:hover {
     background: var(--200-blue);
-    border: 0.1rem solid var(--500-blue);
+    border: 0.2rem solid var(--500-blue);
     border-radius: 0.5rem;
 }
 

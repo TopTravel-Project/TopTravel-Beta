@@ -47,7 +47,11 @@
 #programma-table-container {
     height: 90vh;
     overflow-y: auto;
-    width: 80vw;
+    width: 95%;
+}
+
+#programma-table-container input {
+    display: none;
 }
 
 .orario-evento-programma {
@@ -79,5 +83,5 @@
 
 .evento-info-button:hover {
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem var(--500-blue)
+    box-shadow: 0 0.5rem 1rem var(--500-blue);
 }

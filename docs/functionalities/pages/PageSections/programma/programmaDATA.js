@@ -30,7 +30,18 @@ fetch(url)
             let orarioSpan = eventoContainer.querySelectorAll(".orario-evento-programma")[0];
             let descrizioneSpan = eventoContainer.querySelectorAll(".descrizione-evento-programma")[0];
 
-            orarioSpan.textContent = dataJSON.columns.orario[index];
+            let ora = dataJSON.columns.orario[index];
+
+            let oraTranslated;
+
+            // se l'ora/minuti è meno di 10, allora si aggiunge uno 0 prima
+            if (ora < 10) {
+                oraTranslated = "0" + ora + ":" + "00";
+            } else {
+                oraTranslated = ora + ":" + "00";
+            }
+
+            orarioSpan.textContent = oraTranslated; /* dataJSON.columns.orario[index]; */
             descrizioneSpan.textContent = dataJSON.columns.evento[index];
 
             document.getElementById("programma-table-container").appendChild(eventoContainer);

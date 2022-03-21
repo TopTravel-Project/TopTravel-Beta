@@ -1,7 +1,6 @@
 const wikiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/";
 
-
-function setWikiDataHTML(nome_query) {
+function setWikiDataHTML(nome_query, index) {
     let wikiUrlApi = wikiUrl + nome_query;
 
     fetch(wikiUrlApi)
@@ -9,11 +8,11 @@ function setWikiDataHTML(nome_query) {
             return response.json();
         })
         .then((dataJSON) => {
-            let wikiTitolo = document.querySelectorAll(".wiki-titolo")[0];
-            let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[0];
-            let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[0];
-            let wikiImage = document.querySelectorAll(".wiki-image")[0];
-            let wikiButton = document.querySelectorAll(".wiki-button")[0];
+            let wikiTitolo = document.querySelectorAll(".wiki-titolo")[index];
+            let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[index];
+            let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
+            let wikiImage = document.querySelectorAll(".wiki-image")[index];
+            let wikiButton = document.querySelectorAll(".wiki-button")[index];
 
             wikiTitolo.textContent = dataJSON.title;
             wikiMiniDescrizione.textContent = dataJSON.description;
@@ -23,4 +22,4 @@ function setWikiDataHTML(nome_query) {
         });
 }
 
-setWikiDataHTML("Cristiano Ronaldo");
+setWikiDataHTML("Cristiano Ronaldo", 0);

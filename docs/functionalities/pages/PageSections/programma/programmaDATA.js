@@ -6,6 +6,7 @@ fetch(ExcelUrlApi)
         return response.json();
     })
     .then((dataJSON) => {
+        console.log(dataJSON);
         dataJSON.columns.orario.forEach((item, index) => {
             let eventoContainer = eventoContainerTemplate.content.cloneNode(true);
 

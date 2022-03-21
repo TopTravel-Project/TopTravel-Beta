@@ -3,12 +3,34 @@
 /*  */
 
 .wikipedia-evento-container {
-    padding: 1rem;
-    gap: 1rem;
+    display: grid;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    place-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 0.2rem solid var(--100-blue);
 }
 
 .wikipedia-evento-container>* {
-    margin: 1rem;
-    outline: 1px solid red;
+    border-radius: 0.2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
+}
+
+.wikipedia-evento-container img {
+    height: 10rem;
+    max-width: 80vw;
+    object-fit: contain;
+    border-radius: 0.3rem;
+}
+
+.wikipedia-evento-container a {
+    text-decoration: none;
+    background-color: var(--700-blue);
+    color: white;
+    padding: 1rem 2rem;
+    display: grid;
+    place-content: center;
+    font-weight: 500;
 }

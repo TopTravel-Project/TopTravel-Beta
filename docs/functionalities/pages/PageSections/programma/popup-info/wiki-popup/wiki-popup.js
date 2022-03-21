@@ -9,6 +9,7 @@ function setWikiDataHTML(nome_query, index) {
         })
         .then((dataJSON) => {
             let wikiTitolo = document.querySelectorAll(".wiki-titolo")[index];
+            console.log(wikiTitolo)
             let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[index];
             let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
             let wikiImage = document.querySelectorAll(".wiki-image")[index];

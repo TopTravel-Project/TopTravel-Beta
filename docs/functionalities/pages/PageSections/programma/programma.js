@@ -32,20 +32,19 @@ popupCheckBox.addEventListener('change', (item) => {
     }
 });
 
-/* onload page event */
 window.addEventListener('load', () => {
 
     let dettagliBtn = document.querySelectorAll('.evento-info-button');
 
     dettagliBtn.forEach((item) => {
         item.addEventListener("mousemove", (e) => {
-            let x = e.clientX;
+            let x = e.clientX - item.getBoundingClientRect().left - 20;
             console.log('x:', x)
-            let y = e.clientY;
+            let y = e.clientY - item.getBoundingClientRect().top - 20;
             console.log('y:', y)
 
-            item.style.setProperty("--x-btn", x);
-            item.style.setProperty("--y-btn", y);
+            item.style.setProperty("--x", x + "px");
+            item.style.setProperty("--y", y + "px");
         });
     });
 

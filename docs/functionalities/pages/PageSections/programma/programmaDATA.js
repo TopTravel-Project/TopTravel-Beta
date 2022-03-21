@@ -18,8 +18,8 @@ fetch(url)
         })
     }); */
 
-const url = "https://gsx2json.com/api?id=14uIKI2cUcjHNnQYxGMLArBByRnJIImOps-kPk6ugZNw&sheet=Foglio1";
-fetch(url)
+const ExcelUrlApi = "https://gsx2json.com/api?id=14uIKI2cUcjHNnQYxGMLArBByRnJIImOps-kPk6ugZNw&sheet=Foglio1";
+fetch(ExcelUrlApi)
     .then((response) => {
         return response.json();
     })
@@ -46,4 +46,13 @@ fetch(url)
 
             document.getElementById("programma-table-container").appendChild(eventoContainer);
         });
+    });
+
+const WikiUrlApi = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
+fetch(WikiUrlApi)
+    .then((response) => {
+        return response.json();
+    })
+    .then((dataJSON) => {
+        console.log(dataJSON);
     });

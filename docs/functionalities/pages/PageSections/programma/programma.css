@@ -88,7 +88,7 @@
     border-radius: 0.1rem;
     font-weight: normal;
     opacity: 0.5;
-    transform: translate(var(--x-btn), var(--y-btn));
+    transform: translate(var(--x), var(--y));
 }
 
 .evento-full-component:hover .evento-info-button {

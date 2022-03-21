@@ -1,22 +1,4 @@
 let eventoContainerTemplate = document.querySelectorAll(".programma-template")[0];
-/* const url = "https://sheetdb.io/api/v1/ugfngdyqadjky";
-fetch(url)
-    .then((response) => {
-        return response.json();
-    })
-    .then((dataJSON) => {
-        dataJSON.forEach((item, index) => {
-            let eventoContainer = eventoContainerTemplate.content.cloneNode(true);
-
-            let orarioSpan = eventoContainer.querySelectorAll(".orario-evento-programma")[0];
-            let descrizioneSpan = eventoContainer.querySelectorAll(".descrizione-evento-programma")[0];
-
-            orarioSpan.textContent = dataJSON[index].orario;
-            descrizioneSpan.textContent = dataJSON[index].evento;
-
-            document.getElementById("programma-table-container").appendChild(eventoContainer);
-        })
-    }); */
 
 const ExcelUrlApi = "https://gsx2json.com/api?id=14uIKI2cUcjHNnQYxGMLArBByRnJIImOps-kPk6ugZNw&sheet=Foglio1";
 fetch(ExcelUrlApi)
@@ -55,5 +37,15 @@ fetch(WikiUrlApi)
         return response.json();
     })
     .then((dataJSON) => {
-        console.log(dataJSON);
+        let wikiTitolo = document.querySelectorAll(".wiki-titolo")[0];
+        let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[0];
+        let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[0];
+        let wikiImage = document.querySelectorAll(".wiki-image")[0];
+        let wikiButton = document.querySelectorAll(".wiki-button")[0];
+
+        wikiTitolo.textContent = dataJSON.title;
+        wikiMiniDescrizione.textContent = dataJSON.description;
+        wikiLongDescrizipone.textContent = dataJSON.extract;
+        wikiImage.src = dataJSON.thumbnail.source;
+        wikiButton.href = dataJSON.content_urls.desktop.page;
     });

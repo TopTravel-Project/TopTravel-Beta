@@ -1,0 +1,14 @@
+@import url("../../../../../style.css");
+
+/*  */
+
+.wikipedia-evento-container {
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.wikipedia-evento-container>* {
+    margin: 1rem;
+    outline: 1px solid red;
+    padding: 0.5rem;
+}

@@ -38,10 +38,8 @@ window.addEventListener('load', () => {
 
     dettagliBtn.forEach((item) => {
         item.addEventListener("mousemove", (e) => {
-            let x = e.clientX - item.getBoundingClientRect().left - 20;
-            console.log('x:', x)
-            let y = e.clientY - item.getBoundingClientRect().top - 20;
-            console.log('y:', y)
+            let x = e.clientX - item.getBoundingClientRect().left - 40;
+            let y = e.clientY - item.getBoundingClientRect().top - 30;
 
             item.style.setProperty("--x", x + "px");
             item.style.setProperty("--y", y + "px");

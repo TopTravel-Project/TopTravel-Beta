@@ -48,7 +48,8 @@ fetch(ExcelUrlApi)
         });
     });
 
-const WikiUrlApi = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
+const WikiUrlApi = "https://en.wikipedia.org/api/rest_v1/page/summary/Stack_Overflow";
+
 fetch(WikiUrlApi)
     .then((response) => {
         return response.json();

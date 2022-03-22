@@ -1,6 +1,7 @@
 const wikiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/";
 
 function setWikiDataHTML(nome_query, index) {
+    nome_query = nome_query.replace(/ /g, "_");
     let wikiUrlApi = wikiUrl + nome_query;
 
     fetch(wikiUrlApi)
@@ -9,7 +10,6 @@ function setWikiDataHTML(nome_query, index) {
         })
         .then((dataJSON) => {
             let wikiTitolo = document.querySelectorAll(".wiki-titolo")[index];
-            console.log(wikiTitolo)
             let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[index];
             let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
             let wikiImage = document.querySelectorAll(".wiki-image")[index];
@@ -22,5 +22,3 @@ function setWikiDataHTML(nome_query, index) {
             wikiButton.href = dataJSON.content_urls.desktop.page;
         });
 }
-
-setWikiDataHTML("Cristiano Ronaldo", 0);

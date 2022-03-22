@@ -38,6 +38,8 @@ fetch(ExcelUrlApi)
                 setWikiDataHTML(wikiString, index);
 
                 document.querySelectorAll(".evento-first-component")[index].classList.add("has-wiki");
+
+
                 document.querySelectorAll(".evento-info-button")[index].addEventListener("click", () => {
                     document.querySelectorAll(".wikipedia-evento-container")[index].classList.toggle("wiki-close");
                 });

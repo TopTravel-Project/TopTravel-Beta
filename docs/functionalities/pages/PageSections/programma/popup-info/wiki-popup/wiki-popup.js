@@ -10,12 +10,10 @@ const wikiUrl = 'https://' +
     "&explaintext" +
     "&exsectionformat=plain" +
     "&origin=*" +
-    "&titles=";
-
+    "&pageids=";
 console.log("wikiUrl: " + wikiUrl);
 
 function setWikiDataHTML(nome_query, index) {
-    nome_query = nome_query.replace(/ /g, "%20");
     let wikiUrlApi = wikiUrl + nome_query;
 
     console.log("✅✅✅ " + wikiUrlApi);

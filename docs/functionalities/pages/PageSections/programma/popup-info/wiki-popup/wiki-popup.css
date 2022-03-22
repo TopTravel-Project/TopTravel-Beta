@@ -3,7 +3,7 @@
 /*  */
 
 .wikipedia-evento-container {
-    display: grid;
+    display: none;
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -33,4 +33,8 @@
     display: grid;
     place-content: center;
     font-weight: 500;
+}
+
+.wiki-long-descrizione {
+    font-size: 0.7rem;
 }

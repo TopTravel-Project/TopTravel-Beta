@@ -35,10 +35,10 @@ fetch(ExcelUrlApi)
 
             if (wikiString != "FALSE") {
                 document.getElementById("programma-table-container").appendChild(wikiContainer);
+                document.querySelectorAll(".wikipedia-evento-container")[index].style.display = "grid";
                 setWikiDataHTML(wikiString, index);
             } else {
                 document.getElementById("programma-table-container").appendChild(wikiContainer);
-                wikiContainer.style.display = "none";
             }
         });
     });

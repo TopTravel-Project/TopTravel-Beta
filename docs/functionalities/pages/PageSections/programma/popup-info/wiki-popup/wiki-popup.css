@@ -38,3 +38,7 @@
 .wiki-long-descrizione {
     font-size: 0.7rem;
 }
+
+.wiki-close {
+    display: grid !important;
+}

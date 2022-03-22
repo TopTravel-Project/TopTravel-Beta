@@ -35,14 +35,15 @@ fetch(ExcelUrlApi)
 
             if (wikiString != "FALSE") {
                 document.getElementById("programma-table-container").appendChild(wikiContainer);
-                document.querySelectorAll(".wikipedia-evento-container")[index].style.display = "grid";
                 setWikiDataHTML(wikiString, index);
 
                 document.querySelectorAll(".evento-first-component")[index].classList.add("has-wiki");
+                document.querySelectorAll(".evento-info-button")[index].addEventListener("click", () => {
+                    document.querySelectorAll(".wikipedia-evento-container")[index].classList.toggle("wiki-close");
+                });
             } else {
                 document.getElementById("programma-table-container").appendChild(wikiContainer);
                 document.querySelectorAll(".evento-first-component")[index].classList.remove("has-wiki");
-
             }
         });
     });

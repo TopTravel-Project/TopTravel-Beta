@@ -38,6 +38,7 @@ fetch(ExcelUrlApi)
                 setWikiDataHTML(wikiString, index);
             } else {
                 document.getElementById("programma-table-container").appendChild(wikiContainer);
+                wikiContainer.style.display = "none";
             }
         });
     });

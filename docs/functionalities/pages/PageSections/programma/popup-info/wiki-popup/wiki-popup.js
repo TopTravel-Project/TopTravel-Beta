@@ -23,16 +23,16 @@ function setWikiDataHTML(nome_query, index) {
             return response.json();
         })
         .then((dataJSON) => {
-            let wikiTitolo = document.querySelectorAll(".wiki-titolo")[index];
-            let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[index];
+            /* let wikiTitolo = document.querySelectorAll(".wiki-titolo")[index]; */
+            /*  let wikiMiniDescrizione = document.querySelectorAll(".wiki-mini-descrizione")[index]; */
             let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
             let wikiImage = document.querySelectorAll(".wiki-image")[index];
             let wikiButton = document.querySelectorAll(".wiki-button")[index];
 
-            wikiTitolo.textContent = dataJSON.title;
-            wikiMiniDescrizione.textContent = dataJSON.description;
             wikiLongDescrizipone.textContent = dataJSON.extract;
-            wikiImage.src = dataJSON.thumbnail.source;
-            wikiButton.href = dataJSON.content_urls.desktop.page;
+            wikiButton.href = "https://it.wikipedia.org/?curid=" + nome_query;
+            /*  wikiTitolo.textContent = dataJSON.title; */
+            /* wikiMiniDescrizione.textContent = dataJSON.description; */
+            /* wikiImage.src = dataJSON.thumbnail.source; */
         });
 }

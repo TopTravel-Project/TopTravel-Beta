@@ -12,15 +12,17 @@
     border-bottom: 0.2rem solid var(--100-blue);
 }
 
-.wikipedia-evento-container>* {
+.wikipedia-evento-container>*:not(img) {
     border-radius: 0.2rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
 }
 
 .wikipedia-evento-container img {
-    height: 10rem;
-    max-width: 80vw;
+    max-height: 30rem;
+    height: min-content;
+    width: 100%;
+    max-width: 90vw;
     object-fit: contain;
     border-radius: 0.3rem;
 }
@@ -37,6 +39,10 @@
 
 .wiki-long-descrizione {
     font-size: 0.7rem;
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .wiki-close {

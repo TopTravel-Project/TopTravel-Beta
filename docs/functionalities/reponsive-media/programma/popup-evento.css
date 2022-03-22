@@ -5,4 +5,9 @@
         right: 1rem;
         font-size: 2rem;
     }
+    #programma-table-container {
+        height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
+        width: 95%;
+    }
 }

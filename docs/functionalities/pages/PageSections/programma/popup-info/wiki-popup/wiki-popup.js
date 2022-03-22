@@ -4,7 +4,7 @@ const wikiUrl = 'https://' +
     "/w/api.php" +
     "?action=query" +
     "&format=json" +
-    "&prop=extracts" +
+    "&prop=extracts" + "|pageimages" +
     "&redirects=true" +
     "&explaintext" +
     "&exsectionformat=plain" +
@@ -34,17 +34,8 @@ function setWikiDataHTML(nome_query, index) {
             wikiLongDescrizipone.innerHTML = wikiDescrizioneModified;
 
             wikiButton.href = "https://it.wikipedia.org/?curid=" + nome_query;
-        });
 
 
-
-    let wikiImageUrlApi = "https://it.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&redirects=true&origin=*&pageids=" +
-        nome_query;
-
-    fetch(wikiImageUrlApi)
-        .then((response) => {
-            return response.json();
-        }).then((dataJSON) => {
             let wikiImage = document.querySelectorAll(".wiki-image")[index];
 
             let wikiImageUrl = dataJSON
@@ -53,6 +44,10 @@ function setWikiDataHTML(nome_query, index) {
                 .thumbnail
                 .source;
 
-            wikiImage.src = wikiImageUrl;
-        })
+            let wikiImageUrlModified = wikiImageUrl.replace(/50px/, "1000px");
+
+            wikiImage.src = wikiImageUrlModified;
+
+        });
+
 }

@@ -25,8 +25,11 @@
 }
 
 .evento-full-component .evento-first-component:hover {
-    gap: 0.5rem;
     border: 0.1rem solid var(--200-blue);
+}
+
+.evento-full-component .evento-first-component.has-wiki {
+    gap: 0.5rem;
     grid-template-columns: 1fr 4rem;
 }
 
@@ -93,7 +96,12 @@
     transform: translate(var(--x), var(--y));
 }
 
-.evento-full-component .evento-first-component:hover .evento-info-button {
+.evento-full-component .evento-first-component.has-wiki .evento-info-button {
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.evento-full-component .evento-first-component.has-wiki:hover .evento-info-button {
     opacity: 1;
     font-size: 1.5rem;
 }

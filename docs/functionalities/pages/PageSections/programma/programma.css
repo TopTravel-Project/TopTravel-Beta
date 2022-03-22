@@ -7,7 +7,9 @@
     place-content: center;
 }
 
-.evento-full-component {
+.evento-full-component {}
+
+.evento-full-component .evento-first-component {
     margin: 1rem;
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -18,13 +20,16 @@
     border: 0.1rem solid transparent;
 }
 
-.evento-full-component:hover~div {
+.evento-full-component .evento-first-component:hover~div {
     margin: 1.5rem 1rem;
 }
 
-.evento-full-component:hover {
-    gap: 0.5rem;
+.evento-full-component .evento-first-component:hover {
     border: 0.1rem solid var(--200-blue);
+}
+
+.evento-full-component .evento-first-component.has-wiki {
+    gap: 0.5rem;
     grid-template-columns: 1fr 4rem;
 }
 
@@ -88,10 +93,15 @@
     border-radius: 0.1rem;
     font-weight: normal;
     opacity: 0.5;
-    transform: translate(var(--x-btn), var(--y-btn));
+    transform: translate(var(--x), var(--y));
 }
 
-.evento-full-component:hover .evento-info-button {
+.evento-full-component .evento-first-component.has-wiki .evento-info-button {
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.evento-full-component .evento-first-component.has-wiki:hover .evento-info-button {
     opacity: 1;
     font-size: 1.5rem;
 }

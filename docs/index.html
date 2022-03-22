@@ -169,29 +169,46 @@
 
             <!-- template 0 -->
             <template class="programma-template">
+
                 <div class="evento-full-component">
-                    <div class="evento-container">
-                        <div>
-                            <!-- 0... metti l'orario -->
-                            <span class="orario-evento-programma">
-                                error
-                            </span>
+                    <div class="evento-first-component">
+                        <div class="evento-container">
+                            <div>
+                                <!-- 0... metti l'orario -->
+                                <span class="orario-evento-programma">
+                                    error
+                                </span>
+                            </div>
+                            <!-- 1... metti la descrizione-->
+                            <div>
+                                <span class="descrizione-evento-programma">
+                                    error
+                                </span>
+                            </div>
                         </div>
-                        <!-- 1... metti la descrizione-->
-                        <div>
-                            <span class="descrizione-evento-programma">
-                                error
-                            </span>
-                        </div>
+                    
+                        <!-- 2... più info -->
+                        <label for="info-checkbox-btn">
+                            <div class="evento-info-button" title="più dettagli sul evento">
+                                <!-- dettagli -->
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+                        </label>
                     </div>
 
-                    <!-- 2... più info -->
-                    <label for="info-checkbox-btn">
-                        <div class="evento-info-button" title="più dettagli sul evento">
-                            <!-- dettagli -->
-                            <i class="fa-solid fa-circle-info"></i>
-                        </div>
-                    </label>
+                    <!-- qui si dovrebbe mettere il template1 -->
+                </div>
+
+            </template>
+
+            <!-- template 1 -->
+            <template class="programma-template">
+                <div class="wikipedia-evento-container">
+                    <img class="wiki-image" src="" height="300px" width="300px" alt="immagine del evento">
+<!--                     <div class="wiki-titolo">titolo</div>
+                    <div class="wiki-mini-descrizione">descrizione corta</div> -->
+                    <div class="wiki-long-descrizione">descrizione lunga</div>
+                    <a class="wiki-button" href="">apri il link al sito</a>
                 </div>
             </template>
         </section>
@@ -218,7 +235,7 @@
 
     <script src="./functionalities/pages/PageSections/programma/programmaDATA.js"></script>
     <script src="./functionalities/pages/PageSections/programma/programma.js"></script>
-
+    <script src="./functionalities/pages/PageSections/programma/popup-info/wiki-popup/wiki-popup.js"></script>
 </body>
 
 </html>

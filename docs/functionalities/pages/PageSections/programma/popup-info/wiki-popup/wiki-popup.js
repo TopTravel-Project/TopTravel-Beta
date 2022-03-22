@@ -1,8 +1,24 @@
-const wikiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/";
+/* const wikiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/"; */
+const wikiUrl = 'https://' +
+    "it" +
+    ".wikipedia.org" +
+    "/w/api.php" +
+    "?action=query" +
+    "&format=json" +
+    "&prop=extracts" +
+    "&redirects=true" +
+    "&explaintext" +
+    "&exsectionformat=plain" +
+    "&origin=*" +
+    "&titles=";
+
+console.log("wikiUrl: " + wikiUrl);
 
 function setWikiDataHTML(nome_query, index) {
-    nome_query = nome_query.replace(/ /g, "_");
+    nome_query = nome_query.replace(/ /g, "%20");
     let wikiUrlApi = wikiUrl + nome_query;
+
+    console.log("✅✅✅ " + wikiUrlApi);
 
     fetch(wikiUrlApi)
         .then((response) => {

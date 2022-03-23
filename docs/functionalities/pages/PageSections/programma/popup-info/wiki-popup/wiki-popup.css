@@ -24,7 +24,7 @@
     width: 100%;
     max-width: 90vw;
     object-fit: contain;
-    border-radius: 0.3rem;
+    border-radius: 0.3rem 0.3rem 0 0;
 }
 
 .wikipedia-evento-container a {
@@ -38,7 +38,7 @@
 }
 
 .wiki-long-descrizione {
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin: 0;
     width: 100%;
     padding: 1rem;

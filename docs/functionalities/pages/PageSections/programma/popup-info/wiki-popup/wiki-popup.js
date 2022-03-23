@@ -4,7 +4,7 @@ const wikiUrl = 'https://' +
     "/w/api.php" +
     "?action=query" +
     "&format=json" +
-    "&prop=extracts" + "|pageimages" +
+    "&prop=extracts" + "|pageimages" + /* categories|categoryinfo|contributors|deletedrevisions|duplicatefiles|extlinks|fileusage|imageinfo|images|info|iwlinks|langlinks|links|linkshere|pageprops|redirects|revisions|stashimageinfo|templates|transcludedin */
     "&redirects=true" +
     "&explaintext" +
     "&exsectionformat=plain" +
@@ -30,7 +30,9 @@ function setWikiDataHTML(nome_query, index) {
                 .query
                 .pages[nome_query]
                 .extract
-                .replace(/\./g, ".<br>");
+                .split(".")[0]; /* get the first words in the string, so after the first . delete all the next word, so don't get me description word*/ ;
+
+            console.log("wikiDescrizioneModified: " + wikiDescrizioneModified);
             wikiLongDescrizipone.innerHTML = wikiDescrizioneModified;
 
             wikiButton.href = "https://it.wikipedia.org/?curid=" + nome_query;
@@ -47,7 +49,6 @@ function setWikiDataHTML(nome_query, index) {
             let wikiImageUrlModified = wikiImageUrl.replace(/50px/, "1000px");
 
             wikiImage.src = wikiImageUrlModified;
-
         });
 
 }

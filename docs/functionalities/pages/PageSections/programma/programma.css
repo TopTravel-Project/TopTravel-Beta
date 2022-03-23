@@ -50,9 +50,9 @@
 }
 
 #programma-table-container {
-    height: 90vh;
+    height: 100vh;
     overflow-y: auto;
-    width: 95%;
+    width: calc(100vw - calc(--navWidth));
 }
 
 #programma-table-container input {

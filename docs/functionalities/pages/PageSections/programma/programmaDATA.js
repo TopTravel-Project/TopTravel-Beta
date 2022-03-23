@@ -26,6 +26,7 @@ fetch(ExcelUrlApi)
                 oraTranslated = ora + ":" + "00";
             }
 
+
             orarioSpan.textContent = oraTranslated; /* dataJSON.columns.orario[index]; */
             descrizioneSpan.textContent = dataJSON.columns.evento[index];
 

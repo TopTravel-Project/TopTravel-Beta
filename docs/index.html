@@ -151,20 +151,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <div id="more-info-evento" class="popup-close">
-                <div id="evento-grid-image">
-                    <img src="./images/evento/wallpapers/dark/0.jpg" alt="">
-                    <img src="./images/evento/wallpapers/light/0.jpg" alt="">
-                    <img src="./images/evento/wallpapers/light/4.jpg" alt="">
-                </div>
-                <div id="evento-popup-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perspiciatis voluptas beatae magni vitae soluta excepturi dolorum placeat ea exercitationem? Iste hic accusantium veritatis assumenda nulla quasi iusto adipisci quae!
-                </div>
-                <div id="evento-btn-dettagli-container">
-                    <button>
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <span>posizione</span>
-                    </button>
-                </div>
+                <iframe id="wiki-iframe" style="border: 0;" src="" frameborder="0"></iframe>
             </div>
 
             <!-- template 0 -->
@@ -188,12 +175,11 @@
                         </div>
                     
                         <!-- 2... più info -->
-                        <label for="info-checkbox-btn">
                             <div class="evento-info-button" title="più dettagli sul evento">
                                 <!-- dettagli -->
                                 <i class="fa-solid fa-circle-info"></i>
+                                
                             </div>
-                        </label>
                     </div>
 
                     <!-- qui si dovrebbe mettere il template1 -->
@@ -205,10 +191,12 @@
             <template class="programma-template">
                 <div class="wikipedia-evento-container">
                     <img class="wiki-image" src="" height="300px" width="300px" alt="immagine del evento">
-<!--                     <div class="wiki-titolo">titolo</div>
-                    <div class="wiki-mini-descrizione">descrizione corta</div> -->
+
                     <div class="wiki-long-descrizione">descrizione lunga</div>
-                    <a class="wiki-button" href="">apri il link al sito</a>
+
+                    <label for="info-checkbox-btn">
+                        <div class="wiki-button" onclick="document.querySelector('#wiki-iframe').src = `https://it.wikipedia.org/?curid=` + this.getAttribute('wikid');">apri il link al sito</div>
+                    </label>
                 </div>
             </template>
         </section>
@@ -236,6 +224,7 @@
     <script src="./functionalities/pages/PageSections/programma/programmaDATA.js"></script>
     <script src="./functionalities/pages/PageSections/programma/programma.js"></script>
     <script src="./functionalities/pages/PageSections/programma/popup-info/wiki-popup/wiki-popup.js"></script>
+
 </body>
 
 </html>

@@ -6,7 +6,7 @@
         font-size: 2rem;
     }
     #programma-table-container {
-        height: calc(100vh - var(--nav-height));
+        height: calc(100vh - var(--nav-height) * 2);
         overflow-y: auto;
         width: 95%;
     }

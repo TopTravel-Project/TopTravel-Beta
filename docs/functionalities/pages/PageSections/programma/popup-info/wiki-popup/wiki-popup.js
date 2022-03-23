@@ -4,7 +4,7 @@ const wikiUrl = 'https://' +
     "/w/api.php" +
     "?action=query" +
     "&format=json" +
-    "&prop=extracts" + "|pageimages" +
+    "&prop=extracts" + "|pageimages" + /* categories|categoryinfo|contributors|deletedrevisions|duplicatefiles|extlinks|fileusage|imageinfo|images|info|iwlinks|langlinks|links|linkshere|pageprops|redirects|revisions|stashimageinfo|templates|transcludedin */
     "&redirects=true" +
     "&explaintext" +
     "&exsectionformat=plain" +
@@ -21,20 +21,18 @@ function setWikiDataHTML(nome_query, index) {
             return response.json();
         })
         .then((dataJSON) => {
-            console.log(dataJSON);
             let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
             let wikiButton = document.querySelectorAll(".wiki-button")[index];
-
 
             let wikiDescrizioneModified = dataJSON
                 .query
                 .pages[nome_query]
                 .extract
-                .replace(/\./g, ".<br>");
+                .split(".")[0];
+
             wikiLongDescrizipone.innerHTML = wikiDescrizioneModified;
 
-            wikiButton.href = "https://it.wikipedia.org/?curid=" + nome_query;
-
+            wikiButton.setAttribute("wikid", nome_query);
 
             let wikiImage = document.querySelectorAll(".wiki-image")[index];
 
@@ -47,7 +45,20 @@ function setWikiDataHTML(nome_query, index) {
             let wikiImageUrlModified = wikiImageUrl.replace(/50px/, "1000px");
 
             wikiImage.src = wikiImageUrlModified;
-
         });
 
 }
+
+/* window.addEventListener("load", () => {
+    wikiButton.forEach((item, index) => {
+        wikiButton[index].addEventListener("click", (e) => {
+            e.preventDefault();
+            let wikiId = wikiButton[index].getAttribute("wikid");
+            console.log(wikiId)
+
+            let wikiUrl = "https://it.wikipedia.org/?curid=" + wikiId;
+            wikiIframe.src = wikiUrl;
+            console.log(wikiUrl);
+        });
+    });
+}); */

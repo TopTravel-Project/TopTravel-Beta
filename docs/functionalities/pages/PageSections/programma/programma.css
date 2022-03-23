@@ -56,7 +56,7 @@
 }
 
 #programma-table-container input {
-    display
+    display: none;
 }
 
 .orario-evento-programma {

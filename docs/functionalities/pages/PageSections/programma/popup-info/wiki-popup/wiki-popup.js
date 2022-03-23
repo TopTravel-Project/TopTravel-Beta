@@ -25,7 +25,7 @@ function setWikiDataHTML(nome_query, index) {
             let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
             let wikiButton = document.querySelectorAll(".wiki-button")[index];
 
-            let wikiIframe = document.querySelector("#wiki-iframe");
+
 
             let wikiDescrizioneModified = dataJSON
                 .query

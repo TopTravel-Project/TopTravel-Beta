@@ -28,7 +28,7 @@
     border-radius: 0.3rem 0.3rem 0 0;
 }
 
-.wikipedia-evento-container button {
+.wikipedia-evento-container .wiki-button {
     text-decoration: none;
     background-color: var(--700-blue);
     color: white;

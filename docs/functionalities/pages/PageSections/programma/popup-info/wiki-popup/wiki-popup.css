@@ -12,10 +12,11 @@
     border-bottom: 0.2rem solid var(--100-blue);
 }
 
-.wikipedia-evento-container>*:not(img) {
+.wikipedia-evento-container {
     border-radius: 0.2rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
+    margin-bottom: 3rem;
 }
 
 .wikipedia-evento-container img {
@@ -27,7 +28,7 @@
     border-radius: 0.3rem 0.3rem 0 0;
 }
 
-.wikipedia-evento-container a {
+.wikipedia-evento-container button {
     text-decoration: none;
     background-color: var(--700-blue);
     color: white;
@@ -35,6 +36,10 @@
     display: grid;
     place-content: center;
     font-weight: 500;
+    border: none;
+    border-radius: 0.2rem;
+    width: 100%;
+    font-family: poppins;
 }
 
 .wiki-long-descrizione {

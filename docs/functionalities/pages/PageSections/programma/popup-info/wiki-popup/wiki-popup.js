@@ -25,18 +25,18 @@ function setWikiDataHTML(nome_query, index) {
             let wikiLongDescrizipone = document.querySelectorAll(".wiki-long-descrizione")[index];
             let wikiButton = document.querySelectorAll(".wiki-button")[index];
 
+            let wikiIframe = document.querySelector("#wiki-iframe");
 
             let wikiDescrizioneModified = dataJSON
                 .query
                 .pages[nome_query]
                 .extract
-                .split(".")[0]; /* get the first words in the string, so after the first . delete all the next word, so don't get me description word*/ ;
+                .split(".")[0];
 
-            console.log("wikiDescrizioneModified: " + wikiDescrizioneModified);
             wikiLongDescrizipone.innerHTML = wikiDescrizioneModified;
 
-            wikiButton.href = "https://it.wikipedia.org/?curid=" + nome_query;
-
+            wikiButton.setAttribute("wiki-id", nome_query);
+            wikiIframe.src = "https://it.wikipedia.org/?curid=" + nome_query;
 
             let wikiImage = document.querySelectorAll(".wiki-image")[index];
 

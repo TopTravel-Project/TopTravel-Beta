@@ -151,20 +151,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <div id="more-info-evento" class="popup-close">
-                <div id="evento-grid-image">
-                    <img src="./images/evento/wallpapers/dark/0.jpg" alt="">
-                    <img src="./images/evento/wallpapers/light/0.jpg" alt="">
-                    <img src="./images/evento/wallpapers/light/4.jpg" alt="">
-                </div>
-                <div id="evento-popup-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perspiciatis voluptas beatae magni vitae soluta excepturi dolorum placeat ea exercitationem? Iste hic accusantium veritatis assumenda nulla quasi iusto adipisci quae!
-                </div>
-                <div id="evento-btn-dettagli-container">
-                    <button>
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <span>posizione</span>
-                    </button>
-                </div>
+                <iframe id="wiki-iframe" style="border: 0;" src="https://it.wikipedia.org/w/index.php?title=Piazza_Castello_(Torino)" frameborder="0"></iframe>
             </div>
 
             <!-- template 0 -->
@@ -188,10 +175,10 @@
                         </div>
                     
                         <!-- 2... più info -->
-                        <div class="evento-info-button" title="più dettagli sul evento">
-                            <!-- dettagli -->
-                            <i class="fa-solid fa-circle-info"></i>
-                        </div>
+                            <div class="evento-info-button" title="più dettagli sul evento">
+                                <!-- dettagli -->
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
                     </div>
 
                     <!-- qui si dovrebbe mettere il template1 -->
@@ -203,11 +190,11 @@
             <template class="programma-template">
                 <div class="wikipedia-evento-container">
                     <img class="wiki-image" src="" height="300px" width="300px" alt="immagine del evento">
-<!--                     <div class="wiki-titolo">titolo</div>
-                    <div class="wiki-mini-descrizione">descrizione corta</div> -->
+
                     <div class="wiki-long-descrizione">descrizione lunga</div>
+
                     <label for="info-checkbox-btn">
-                        <a class="wiki-button" href="">apri il link al sito</a>
+                        <button class="wiki-button">apri il link al sito</button>
                     </label>
                 </div>
             </template>

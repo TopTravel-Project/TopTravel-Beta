@@ -36,10 +36,7 @@
     display: grid;
     place-content: center;
     font-weight: 500;
-    border: none;
     border-radius: 0.2rem;
-    width: 100%;
-    font-family: poppins;
 }
 
 .wiki-long-descrizione {

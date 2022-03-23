@@ -151,7 +151,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <div id="more-info-evento" class="popup-close">
-                <iframe id="wiki-iframe" style="border: 0;" src="https://it.wikipedia.org/w/index.php?title=Piazza_Castello_(Torino)" frameborder="0"></iframe>
+                <iframe id="wiki-iframe" style="border: 0;" src="www.google.com/" frameborder="0"></iframe>
             </div>
 
             <!-- template 0 -->
@@ -195,7 +195,7 @@
                     <div class="wiki-long-descrizione">descrizione lunga</div>
 
                     <label for="info-checkbox-btn">
-                        <div class="wiki-button">apri il link al sito</div>
+                        <div class="wiki-button" >apri il link al sito</div>
                     </label>
                 </div>
             </template>
@@ -224,6 +224,23 @@
     <script src="./functionalities/pages/PageSections/programma/programmaDATA.js"></script>
     <script src="./functionalities/pages/PageSections/programma/programma.js"></script>
     <script src="./functionalities/pages/PageSections/programma/popup-info/wiki-popup/wiki-popup.js"></script>
+
+    <script>
+        /* qui metto il codice che non mi funziona dentro i file esterni se li metto qui funziona! */
+        window.addEventListener("load", () => {
+            wikiButton.forEach((item, index) => {
+                wikiButton[index].addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let wikiId = wikiButton[index].getAttribute("wikid");
+                    console.log(wikiId)
+
+                    let wikiUrl = "https://it.wikipedia.org/?curid=" + wikiId;
+                    wikiIframe.src = wikiUrl;
+                    console.log(wikiUrl);
+                });
+            });
+        })
+    </script>
 </body>
 
 </html>

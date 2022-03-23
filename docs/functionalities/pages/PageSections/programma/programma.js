@@ -4,6 +4,7 @@ let popupCheckBox = document.querySelector('#info-checkbox-btn');
 let overlayPopup = document.querySelector('#overlay-popup-evento');
 
 let wikiIframe = document.querySelector("#wiki-iframe");
+let wikiButton = document.querySelectorAll(".wiki-button");
 
 window.addEventListener('load', () => {
 
@@ -50,13 +51,3 @@ popupCheckBox.addEventListener('change', (item) => {
         overlayPopup.classList.add('popup-close');
     }
 });
-
-document.querySelectorAll(".wiki-button").forEach((item, index) => {
-    item.addEventListener("click", (e) => {
-        let wikiId = item.getAttribute("wiki-id");
-        let wikiUrl = "https://it.wikipedia.org/?curid=" + wikiId;
-        wikiIframe.src = wikiUrl;
-    });
-});
-
-/* onclick of button, change the src of wikiIframe to this wiki-id attribute */

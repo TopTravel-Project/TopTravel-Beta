@@ -32,6 +32,10 @@
     .servizio-testo-posizione span {
         font-size: 2vw;
     }
+    #mappa-container #mappa-quadrato {
+        width: 95vw;
+        height: calc(90vh - var(--servizi-height, 266px) - 5rem - var(--nav-height));
+    }
 }
 
 @media screen and (max-height: 800px) {
@@ -40,8 +44,5 @@
     }
     .servizio-testo-posizione span {
         font-size: 2vh;
-    }
-    #mappa-container #mappa-quadrato {
-        width: 80vw;
     }
 }

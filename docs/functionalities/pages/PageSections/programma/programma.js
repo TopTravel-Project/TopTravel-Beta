@@ -54,3 +54,32 @@ popupCheckBox.addEventListener('change', (item) => {
 });
 
 /*  */
+
+window.addEventListener("load", () => {
+    function setOrarioProgrammaAttuale() {
+        /* get actual time, and translate it to 15:00 format */
+        let actualTime = new Date();
+        let actualHour = actualTime.getHours();
+
+        let actualTimeString = actualHour + ":" + "00";
+
+        let orari = document.querySelectorAll(".orario-evento-programma");
+        let orariArray = Array.from(orari);
+
+        orariArray.forEach((item) => {
+            let ora = item.textContent;
+
+            if (ora == actualTimeString) {
+                item.classList.add("evento-now");
+            } else if (ora != actualTimeString) {
+                item.classList.add("evento-passato");
+            }
+        });
+    }
+
+    setOrarioProgrammaAttuale();
+
+    setInterval(() => {
+        setOrarioProgrammaAttuale();
+    }, 1000 * 60 * 60);
+});

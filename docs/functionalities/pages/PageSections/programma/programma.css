@@ -114,3 +114,8 @@
 .descrizione-evento-programma {
     font-size: 0.8rem;
 }
+
+.evento-now {
+    color: var(--700-blue);
+    transform: scale(1.3);
+}

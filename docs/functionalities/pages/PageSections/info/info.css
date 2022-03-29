@@ -8,24 +8,29 @@
 
 #info-container {
     padding: 1rem;
-    height: var(--info-height);
     box-sizing: border-box;
 }
 
 .hotel-component-info {
-    box-shadow: 0 0 0.5rem var(--700-blue);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
     overflow: hidden;
+    height: var(--info-height);
+}
+
+.hotel-component-info:hover {
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .hotel-image-container {
     display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 .hotel-image-container img {
-    max-height: var(--info-height);
+    height: var(--info-height);
     max-width: 40vw;
     object-fit: cover;
     display: grid;

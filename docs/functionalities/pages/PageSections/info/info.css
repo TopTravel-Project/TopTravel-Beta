@@ -1,0 +1,90 @@
+@import url(../../../../style.css);
+
+/*  */
+
+* {
+    --info-height: 20rem;
+}
+
+#info-container {
+    padding: 1rem;
+    height: var(--info-height);
+    box-sizing: border-box;
+}
+
+.hotel-component-info {
+    box-shadow: 0 0 0.5rem var(--700-blue);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    overflow: hidden;
+}
+
+.hotel-image-container {
+    display: grid;
+}
+
+.hotel-image-container img {
+    max-height: var(--info-height);
+    max-width: 40vw;
+    object-fit: cover;
+    display: grid;
+}
+
+.hotel-data-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.hotel-second-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    place-content: center;
+}
+
+.hotel-second-container>* {
+    /* outline: 1px solid green; */
+}
+
+.hotel-servizi-container {
+    display: grid;
+    font-size: 0.8rem;
+    color: var(--700-blue);
+    padding: 0.5rem;
+}
+
+.hotel-servizi-container>div::before {
+    content: "\f00c";
+    font-family: fontawesome;
+    color: var(--500-blue);
+}
+
+.hotel-servizi-container>div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hotel-servizi-container>div i {
+    width: 1rem;
+}
+
+.hotel-button-container {
+    display: grid;
+    align-content: center;
+}
+
+.hotel-button-container button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--500-blue);
+    color: white;
+    box-shadow: 0 0.5rem 1rem var(--500-blue);
+    cursor: pointer;
+    font-family: poppins;
+    padding: 1rem 2rem;
+}

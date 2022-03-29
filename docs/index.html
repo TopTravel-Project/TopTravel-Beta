@@ -151,7 +151,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <div id="more-info-evento" class="popup-close">
-                <iframe id="wiki-iframe" style="border: 0;" src="" frameborder="0"></iframe>
+                <iframe id="wiki-iframe" style="border: 0;" src="https://it.wikipedia.org/?curid=232287" frameborder="0"></iframe>
             </div>
 
             <!-- template 0 -->
@@ -225,6 +225,20 @@
     <script src="./functionalities/pages/PageSections/programma/programma.js"></script>
     <script src="./functionalities/pages/PageSections/programma/popup-info/wiki-popup/wiki-popup.js"></script>
 
+    <script>
+        function removeWikiNav() {
+
+            document.querySelector("#wiki-iframe").onload = () => {
+                let wikiIframeContent = document.querySelector("#wiki-iframe").contentDocument;
+                console.log(wikiIframeContent)
+                let wikiLateralNav = wikiIframeContent.querySelector("#mw-panel");
+            }
+
+
+        }
+
+        removeWikiNav();
+    </script>
 </body>
 
 </html>

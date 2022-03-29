@@ -61,7 +61,7 @@
 
 .orario-evento-programma {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center
 }
 
@@ -109,4 +109,8 @@
 .evento-info-button:hover {
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem var(--500-blue);
+}
+
+.descrizione-evento-programma {
+    font-size: 0.8rem;
 }

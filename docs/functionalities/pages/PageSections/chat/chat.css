@@ -30,12 +30,31 @@
 }
 
 #chat-form input[type=text] {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    font-family: Poppins;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: white;
+    box-shadow: 0 0 1rem rgb(218, 218, 218);
+    color: var(--900-blue);
+}
+
+#chat-form input[type=text]:focus {
+    font-size: 1.3rem;
+    outline: none;
+    box-shadow: 0 0 0.2rem var(--500-blue);
 }
 
 #chat-form input[type=submit] {
     font-family: fontawesome;
     font-size: 1.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--400-blue);
+    box-shadow: 0 0.5rem 1rem var(--400-blue);
+    color: white;
+    position: relative;
 }
 
 #chat-inner-messaggi {

@@ -56,3 +56,8 @@
 .popup-close {
     display: none !important;
 }
+
+.wiki-long-descrizione {
+    font-size: 0.9rem !important;
+    line-height: 2;
+}

@@ -40,6 +40,7 @@ popupCheckBox.addEventListener('change', (item) => {
                     popupCheckBox.checked = false;
                     console.log("false popup");
 
+
                     window.removeEventListener('click', removePopup);
                 }
             }
@@ -51,3 +52,5 @@ popupCheckBox.addEventListener('change', (item) => {
         overlayPopup.classList.add('popup-close');
     }
 });
+
+/*  */

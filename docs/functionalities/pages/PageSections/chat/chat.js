@@ -84,13 +84,15 @@ function findAnswerIndexBot(messaggioInviatoDalUtente) {
 
             let results = fuzzysort.go(messaggioInviatoDalUtente, tipologia);
 
-            console.log(results.length);
             if (results.length != 0) {
-
                 bestResult = results[0];
 
                 if (bestResult.score > score) {
                     score = bestResult.score;
+                    indexDomanda = index;
+                }
+            } else {
+                if (tipologia.includes(messaggioInviatoDalUtente)) {
                     indexDomanda = index;
                 }
             }

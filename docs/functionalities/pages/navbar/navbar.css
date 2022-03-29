@@ -75,7 +75,7 @@ nav i {
 .nav-icons-container::before {
     content: '';
     position: absolute;
-    top: var(--indicatoreY, 80px);
+    top: var(--indicatoreY, calc(80px*3));
     left: 0;
     height: var(--icon-container-height);
     border-radius: 0 calc(var(--indicatore-width)/2) calc(var(--indicatore-width)/2) 0;

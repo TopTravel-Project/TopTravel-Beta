@@ -26,6 +26,9 @@
         padding: 0;
         padding-left: 2rem;
     }
+    body {
+        --indexPagina: 3;
+    }
     .nav-icons-container::before {
         content: '';
         top: 0;

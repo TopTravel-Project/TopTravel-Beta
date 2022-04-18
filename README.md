@@ -1,7 +1,7 @@
 # TopTravel-Beta
 
 #### multi-page animation
-<img src="https://user-images.githubusercontent.com/98979843/163594417-15916deb-fb9c-48a3-85f6-eb6df0484164.gif" alt="top travel beta" />
+<img src="https://user-images.githubusercontent.com/98979843/163594417-15916deb-fb9c-48a3-85f6-eb6df0484164.gif" alt="top travel beta" width="100%"/>
 
 #### more info btn (data from wiki api)
 <img src="https://user-images.githubusercontent.com/98979843/163588133-38a58930-8a92-4f5a-ad74-896ec708d165.gif" alt="top travel beta" height="500"/>
